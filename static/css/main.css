@@ -35,7 +35,7 @@ body {
     text-indent: 10px;
 }
 
-.wrap-mygallery {
+.wrap-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +43,7 @@ body {
     margin: auto;
 }
 
-.item-mygallery > img {
+.item-main > img {
     background-color: white;
     display: block;
     width: 400px;
@@ -52,18 +52,18 @@ body {
     object-fit: cover;
 }
 
-.box-text-mygallery {
+.box-text-main {
     margin: 20px 0;
 }
 
-.box-text-mygallery > span,
-.box-text-mygallery > p {
+.box-text-main > span,
+.box-text-main > p {
     display: block;
     align-items: center;
     text-align: center;
     margin: 10px;
 }
 
-.title-mygallery {
+.title-main {
     font-weight: 700;
 }
