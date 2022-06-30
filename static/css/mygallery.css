@@ -35,35 +35,42 @@ body {
     text-indent: 10px;
 }
 
-.wrap-main {
+.wrap-mygallery {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    margin: auto;
+    margin: 30px auto;
 }
 
-.item-main > img {
+.item-mygallery > img {
     background-color: white;
     display: block;
-    width: 400px;
-    height: 400px;
+    width: 256px;
+    height: 256px;
     margin: auto;
     object-fit: cover;
 }
 
-.box-text-main {
+.box-text-mygallery {
     margin: 20px 0;
 }
 
-.box-text-main > span,
-.box-text-main > p {
+.box-text-mygallery > span,
+.box-text-mygallery > p {
     display: block;
     align-items: center;
     text-align: center;
-    margin: 10px;
+    margin: 20px 40px
 }
 
-.title-main {
+.title-mygallery {
     font-weight: 700;
+}
+
+.sell-status {
+    padding: 5px;
+    background-color: blue;
+    color: whitesmoke;
+
 }
