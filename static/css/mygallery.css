@@ -1,0 +1,76 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.wrap-menu {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 10px auto;
+    font-size: 1.2rem;
+}
+
+.box-filter > span {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.box-search > input {
+    width: 240px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    text-indent: 10px;
+}
+
+.wrap-mygallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 30px auto;
+}
+
+.item-mygallery > img {
+    background-color: white;
+    display: block;
+    width: 256px;
+    height: 256px;
+    margin: auto;
+    object-fit: cover;
+}
+
+.box-text-mygallery {
+    margin: 20px 0;
+}
+
+.box-text-mygallery > span,
+.box-text-mygallery > p {
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin: 20px 40px
+}
+
+.title-mygallery {
+    font-weight: 700;
+}
+
+.sell-status {
+    padding: 5px;
+    background-color: blue;
+    color: whitesmoke;
+
+}
