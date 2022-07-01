@@ -8,7 +8,6 @@ async function loadMainProductPage(){
     const item_title_list = document.querySelectorAll('.title-main')
     const item_description_list = document.querySelectorAll('.description-main')
     const item_price_list = document.querySelectorAll('.price-main')
-    const item_is_selling_list = document.querySelectorAll('.isSelling-main')
 
     // console.log(typeof(item_main_list), item_main_list, '길이==', item_main_list.length)
 
@@ -19,11 +18,6 @@ async function loadMainProductPage(){
         item_title_list[i].innerText = product_list[i]['title']
         item_description_list[i].innerText = product_list[i]['description']
         item_price_list[i].innerText = product_list[i]['price']
-        
-        const is_selling = product_list[i]['is_selling']
-        if(is_selling){
-            item_is_selling_list[i].innerText = '판매중'
-        } 
     }
 }
 
