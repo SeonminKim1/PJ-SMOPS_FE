@@ -71,4 +71,6 @@ async function login() {
         alert(response.status)
     }
 
+    response_json = await response.json()    
+    return response_json
 }
