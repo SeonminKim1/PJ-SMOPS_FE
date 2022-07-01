@@ -35,19 +35,32 @@ body {
     text-indent: 10px;
 }
 
+.filter-active {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
 .wrap-main {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 80%;
     margin: auto;
+    flex-wrap: wrap;
+}
+
+.item-main {
+    width: 20%;
+    margin-bottom: 20px;
+}
+
+.item-main:hover > img {
+    filter: brightness(70%);
 }
 
 .item-main > img {
-    background-color: white;
     display: block;
-    width: 400px;
-    height: 400px;
+    width: 100%;
     margin: auto;
     object-fit: cover;
 }
@@ -66,4 +79,75 @@ body {
 
 .title-main {
     font-weight: 700;
+}
+
+
+/* 필터 */
+.wrap-filter-category {
+    display: none;
+}
+
+.wrap-filter-category.active {
+    display: block;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.filter-main {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.filter-main > span {
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+
+.filter-main > li {
+    list-style: none;
+}
+
+.filter-content-btn,
+.filter-btn-search {
+    all: unset;
+    padding: 8px 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+li > button:hover {
+    background-color: lightgray;
+}
+
+.filter-btn-search {
+    font-size: 1.2rem;
+}
+
+.filter-btn-search:hover {
+    background-color: slategray;
+    color: whitesmoke;
+}
+
+@media screen and (max-width: 768px) {
+    .wrap-main {
+        display: block;
+    }
+
+    .wrap-main {
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .item-main {
+        width: 80%;
+        margin: 0 auto 40px;
+    }
+
+    .wrap-filter-category {
+        font-size: .8rem;
+    }
 }
