@@ -11,7 +11,7 @@ a {
     color: black;
 }
 
-.nav-bar {
+.container-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,55 +19,56 @@ a {
     border-bottom: 1px solid black;
 }
 
-.nav-box-ai {
+.box-ai-nav {
     padding: 8px 12px;
 }
 
-.nav-box-ai:hover {
+.box-ai-nav:hover {
     background-color: blueviolet;
     font-weight: 700;
 }
 
-.nav-painting-menu:hover {
+.painting-menu-nav:hover {
     color: white;
 }
 
-.nav-painting-menu {
+.painting-menu-nav {
     font-size: 2rem;
     font-weight: 600;
 }
 
-.nav-box-logo {
+.box-logo-nav {
     font-size: 24px;
     font-weight: 700;
     color: white;
 }
 
-.nav-logo {
+.logo-nav {
     font-size: 4rem;
+    margin-left: 30px;
 }
 
-.nav-box-menu {
+.box-menu-nav {
     display: flex;
-    list-style: none;
     padding-left: 0;
 }
 
-.nav-box-menu > li {
+.box-menu-nav > li {
+    list-style: none;
     display: flex;
     justify-content: space-between;
 }
 
-.nav-menu {
+.menu-nav {
     padding: 8px 15px;
 }
 
-.nav-menu:hover {
+.menu-nav:hover {
     background-color: blue;
     color: white;
 }
 
-.nav-bar-toggle {
+.bar-toggle-nav {
     display: none;
     position: absolute;
     right: 32px;
@@ -75,46 +76,80 @@ a {
     color: black;
 }
 
+.wrap-category-nav {
+    border-bottom: 1px solid black;
+}
+
+.box-category-nav {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+
+
+.box-category-nav > li {
+    list-style: none;
+}
+
+.category-nav {
+    margin: 20px;
+    padding: 2px 0;
+}
+
+.category-nav:hover {
+    color: blueviolet;
+}
+
 @media screen and (max-width: 768px) {
-    .nav-bar {
+    .container-nav {
+        height: 40px;
         flex-direction: column;
         align-items: flex-start;
         padding: 10px;
         border-bottom: 1px solid black;
     }
 
-    .nav-painting-menu {
-        font-size: 1rem;
-    }
-
-    .nav-box-logo {
+    .box-ai-nav {
         position: absolute;
-        left: 45%;
+        top: 2%;
+        left: 40%;
+        padding: 2px 10px;
     }
 
-    .nav-logo {
+    .painting-menu-nav {
+        font-size: 1.2rem;
+    }
+
+    .box-logo-nav {
+        position: absolute;
+        right: 100%;
+    }
+
+    .logo-nav {
+        position: absolute;
         font-size: 2rem;
     }
 
-    .nav-box-menu {
+    .box-menu-nav {
         display: none;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 30px;
     }
 
-    .nav-menu {
-        color: black;
-    }
-
-    .nav-bar-toggle {
+    .bar-toggle-nav {
         display: block;
+        padding-top: 5px;
     }
 
-    .nav-box-menu.active {
+    .box-menu-nav.active {
         display: flex;
         width: 100%;
+        margin-top: 60px;
+    }
+
+    .category-active {
+        display: none;
     }
 }
 
