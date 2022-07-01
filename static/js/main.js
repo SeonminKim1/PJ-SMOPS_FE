@@ -11,7 +11,7 @@ async function loadMainProductPage(){
 
     // console.log(typeof(item_main_list), item_main_list, '길이==', item_main_list.length)
 
-    for(let i=0; i<product_list.length; i++){
+    for(let i=0; i<item_img_list.length; i++){
         console.log(product_list[i])
 
         item_img_list[i].src = 'https:/' + product_list[i]['img_path']
