@@ -15,9 +15,10 @@
     <script src="https://kit.fontawesome.com/51395e4b23.js" crossorigin="anonymous"></script>
 
     <!-- CSS Import -->
-    <link rel="stylesheet" type="text/css" href="/static/css/init_page.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
 
     <!-- Javascript Import -->
+    <script src="../../static/js/api.js"></script>
 </head>
 
 <body>
@@ -29,11 +30,11 @@
                 <span>Selling My Oil Painting Service</span>
             </div>
             <div class="wrap-input-init">
-                <li><input class="input-id-init" type="email" size=40 placeholder="E-mail" title="아이디"></li>
-                <li><input class="input-password-init" type="password" size=40 maxlength="16" placeholder="Password"
+                <li><input id="input-id-init" type="text" size=40 placeholder="E-mail" title="아이디"></li>
+                <li><input id="input-password-init" type="password" size=40 maxlength="16" placeholder="Password"
                            title="비밀번호"></li>
                 <li>
-                    <button type="submit" class="btn-login-init">
+                    <button type="submit" onclick="login()" class="btn-login-init">
                         로그인
                     </button>
                 </li>
