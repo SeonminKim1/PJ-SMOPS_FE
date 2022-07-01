@@ -1,8 +1,10 @@
-const toggleBtn = document.querySelector('.nav-bar-toggle');
-const menu = document.querySelector('.nav-box-menu');
+const toggleBtn = document.querySelector('.bar-toggle-nav');
+const menu = document.querySelector('.box-menu-nav');
+const category = document.querySelector('.wrap-category-nav');
 
-// toggleBtn.addEventListener('click', () => {});
+// nav toggleBtn event //
 
 toggleBtn.addEventListener('click', () => {
     menu.classList.toggle('active');
+    category.classList.toggle('category-active')
 });
