@@ -1,4 +1,4 @@
-async function loadMainProductPage(){
+async function loadMainProductPage() {
     console.log("main.js - loadMainProductPage")
     product_list = await getProductListbyCategory()
     console.log('===prouct_list ==\n', product_list)
@@ -11,7 +11,7 @@ async function loadMainProductPage(){
 
     // console.log(typeof(item_main_list), item_main_list, '길이==', item_main_list.length)
 
-    for(let i=0; i<item_img_list.length; i++){
+    for (let i = 0; i < item_img_list.length; i++) {
         console.log(product_list[i])
 
         item_img_list[i].src = 'https:/' + product_list[i]['img_path']
@@ -22,3 +22,11 @@ async function loadMainProductPage(){
 }
 
 loadMainProductPage();
+
+// 필터
+const filterBtn = document.querySelector('.filter-active');
+const filterDropDown = document.querySelector('.wrap-filter-category');
+
+filterBtn.addEventListener('click', () => {
+    filterDropDown.classList.toggle('active');
+});
