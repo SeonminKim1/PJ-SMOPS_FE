@@ -1,16 +1,43 @@
-async function loadMainProductDetailPage(product_id){
-    console.log("main.js - loadMainProductDetailPage")
-    product = await getProductDetailbyCategory(product_id)
-    console.log('===product ==\n', product)
 
-    const item_img_list = document.querySelector('.item-img-detail')
-    const item_title_list = document.querySelector('.title-main-detail')
-    const item_description_list = document.querySelector('.description-main-detail')
-    const item_price_list = document.querySelector('.price-main-detail')
+async function loadMainProductDetailPage(){
+    console.log("main_detail.js - loadMainProductDetailPage")
 
-    // console.log(typeof(item_main_list), item_main_list, '길이==', item_main_list.length)
-    item_img_list.src = 'https:/' + product['img_path']
-    item_title_list.innerText = product['title']
-    item_description_list.innerText = product['description']
-    item_price_list.innerText = product['price']
+    let product_id;
+    if(localStorage.getItem('product_img_id')){
+        product_id = localStorage.getItem('product_img_id')
+    }
+    console.log('main_detail.js - product_id1', product_id)
+    product_id = product_id.replace(`${main_product_img_id}`, '')
+    product_id = parseInt(product_id)
+    console.log('main_detail.js - product_id2', product_id)
+    const response = await fetch(`${backend_base_url}/product/detail/${product_id}`,{
+        headers:{
+            Accept: "application/json",
+            'content-type': "application/json"
+        },
+        method: 'GET',
+        // body: JSON.stringify(Data)
+    })
+
+    response_json = await response.json()  
+
+    if(response.status == 200) {
+        MainProductDetailPutData(response_json)
+        alert(response.status)
+    } else {
+        alert(response.status)
+    }
+
+    return response_json
+}
+
+
+function MainProductDetailPutData(product_one){
+    const item_img = document.querySelector('.item-img-detail')
+    // const item_title_list = document.querySelectorAll('.title-main')
+    // const item_description_list = document.querySelectorAll('.description-main')
+    // const item_price_list = document.querySelectorAll('.price-main')
+    console.log(product_one)
+
+    item_img.src = 'https:/' + product_one['img_path']
 }
