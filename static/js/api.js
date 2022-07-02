@@ -67,6 +67,7 @@ async function login() {
 
         localStorage.setItem("payload", jsonPayload);
         // window.location.replace(`${frontend_base_url}/`);
+        window.location.replace(`${frontend_base_url}/templates/art/main.html`);
     } else {
         alert(response.status)
     }
