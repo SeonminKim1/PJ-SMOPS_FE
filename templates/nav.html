@@ -1,54 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nav Bar</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;500;900&display=swap"
-            rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/51395e4b23.js" crossorigin="anonymous"></script>
-    <script src="/static/js/main.js"></script>
-    <script src="/static/js/nav.js" defer></script>
-    
-    <!-- CSS Import -->
-    <link rel="stylesheet" type="text/css" href="/static/css/nav.css">
-</head>
-
-<body>
-<nav class="bar-nav">
-    <div class="container-nav">
-        <div class="box-ai-nav">
-            <a href="" class="painting-menu-nav">CREATE PAINTING</a>
-        </div>
-        <div class="box-logo-nav">
-            <a href="" class="logo-nav">SMOPS</a>
-        </div>
-        <ul class="box-menu-nav">
-            <li><a href="" class="menu-nav">USERNAME</a></li>
-            <li><a href="" class="menu-nav">MY GALLERY</a></li>
-            <li><a href="" class="menu-nav">LOGOUT</a></li>
-        </ul>
-        <a href="#" class="bar-toggle-nav">
-            <i class="fa-solid fa-bars"></i>
-        </a>
+<div class="container-nav">
+    <div class="box-ai-nav">
+        <a href="" class="painting-menu-nav">CREATE PAINTING</a>
     </div>
-    <div class="wrap-category-nav">
-        <ul class="box-category-nav">
-            <li><a class="category-nav-human">인물화</a></li>
-            <li><a class="category-nav-view">풍경화</a></li>
-            <li><a class="category-nav-still">정물화</a></li>
-            <li><a class="category-nav-animal">동물화</a></li>
-        </ul>
+    <div class="box-logo-nav">
+        <a href="" class="logo-nav">SMOPS</a>
     </div>
-</nav>
-</body>
-</html>
+    <ul class="box-menu-nav">
+        <li><a href="" class="menu-nav">USERNAME</a></li>
+        <li><a href="" class="menu-nav">MY GALLERY</a></li>
+        <li><a href="" class="menu-nav">LOGOUT</a></li>
+    </ul>
+    <a href="#" class="bar-toggle-nav">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+</div>
+<div class="wrap-category-nav">
+    <ul class="box-category-nav">
+        <li><span class="category-nav category-nav-human" onclick="loadMainProductPage(this.innerText)">인물화</span></li>
+        <li><span class="category-nav category-nav-view" onclick="loadMainProductPage(this.innerText)">풍경화</span></li>
+        <li><span class="category-nav category-nav-still" onclick="loadMainProductPage(this.innerText)">정물화</span></li>
+        <li><span class="category-nav category-nav-animal" onclick="loadMainProductPage(this.innerText)">동물화</span></li>
+    </ul>
+</div>
