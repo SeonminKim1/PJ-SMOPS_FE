@@ -1,9 +1,9 @@
 const backend_base_url = "http://127.0.0.1:8000"
 const frontend_base_url = "http://127.0.0.1:5500"
 
-async function getProductList(){
+async function getProductList(category_name){
     console.log("main api.js - getProductList")
-    const response = await fetch(`${backend_base_url}/product/인물화/`,{
+    const response = await fetch(`${backend_base_url}/product/${category_name}/`,{
         headers:{
             Accept: "application/json",
             'content-type': "application/json"
@@ -11,8 +11,8 @@ async function getProductList(){
         method: 'GET',
         // body: JSON.stringify(Data)
     })
-
-    response_json = await response.json()    
+    console.log('============================================', response)
+    response_json = await response.json()
     return response_json
 }
 
@@ -28,6 +28,6 @@ async function getProductDetailbyCategory(product_id){
         // body: JSON.stringify(Data)
     })
 
-    response_json = await response.json()    
+    response_json = await response.json()  
     return response_json
 }

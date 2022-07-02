@@ -16,159 +16,183 @@
 
     <!-- CSS Import -->
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/nav.css">
+
+    <!-- Javascript Import -->
+    <!-- <script src="/static/js/init.js"></script>-->
 </head>
 
-<script>
-function go_detail(){ // get 방식
-    const response = await fetch(`${backend_base_url}/product/detail/3`, {
-        headers: {
-            Accept: "application/json",
-            'Content-type': "application/json"
-        },
-        method: "POST",
-        // body: JSON.stringify(loginData)
-    })
-}
-</script>
-</script>
 <body>
-<section>
-    <div class="container-main">
-        <div class="wrap-menu">
-            <div class="box-filter">
-                <!-- sgv icon -->
-                <a href="#" id="filter_id" class="filter-active">FILTER</a>
+    <nav id="bar-nav">
+        <div class="container-nav">
+            <div class="box-ai-nav">
+                <a href="" class="painting-menu-nav">CREATE PAINTING</a>
             </div>
-            <div class="box-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" name="q" placeholder="검색">
+            <div class="box-logo-nav">
+                <a href="" class="logo-nav">SMOPS</a>
+            </div>
+            <ul class="box-menu-nav">
+                <li><a href="" class="menu-nav">USERNAME</a></li>
+                <li><a href="" class="menu-nav">MY GALLERY</a></li>
+                <li><a href="" class="menu-nav">LOGOUT</a></li>
+            </ul>
+            <a href="#" class="bar-toggle-nav">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </div>
+        <div class="wrap-category-nav">
+            <ul class="box-category-nav">
+                <li><a class="category-nav-human">인물화</a></li>
+                <li><a class="category-nav-view">풍경화</a></li>
+                <li><a class="category-nav-still">정물화</a></li>
+                <li><a class="category-nav-animal">동물화</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <div class="container-main">
+            <!-- Menu - (filter, search bar) -->
+            <div class="wrap-menu">
+                <div class="box-filter">
+                    <!-- sgv icon -->
+                    <a href="#" id="filter_id" class="filter-active">FILTER</a>
+                </div>
+                <div class="box-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" name="q" placeholder="검색">
+                </div>
+            </div>
+            <!-- Filtering -->
+            <div class="wrap-filter-category">
+                <ul class="filter-sort filter-main">
+                    <span>정렬</span>
+                    <li>
+                        <button class="filter-content-btn">등록일</button>
+                    </li>
+                    <li>
+                        <button class="filter-content-btn">낮은가격</button>
+                    </li>
+                    <li>
+                        <button class="filter-content-btn">높은가격</button>
+                    </li>
+                </ul>
+                <ul class="filter-price filter-main">
+                    <span>가격</span>
+                    <li>
+                        <button class="filter-content-btn">0~50,000원</button>
+                    </li>
+                    <li>
+                        <button class="filter-content-btn">50,000~100,000원</button>
+                    </li>
+                    <li>
+                        <button class="filter-content-btn">100,000~500,000원</button>
+                    </li>
+                </ul>
+                <ul class="filter-shape filter-main">
+                    <span>그림형태</span>
+                    <li>
+                        <button class="filter-content-btn">정방형</button>
+                    </li>
+                    <li>
+                        <button class="filter-content-btn">가로형</button>
+                    </li>
+                    <li>
+                        <button class="filter-content-btn">세로형</button>
+                    </li>
+                </ul>
+                <div class="filter-box-search filter-main">
+                    <button class="filter-btn-search">적용하기</button>
+                </div>
+            </div>
+
+            <!-- Product Main -->
+            <div class="wrap-main">
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="go_detail()">
+                    <div class="box-text-main">
+                        <span class="title-main">my panting title</span>
+                        <p class="description-main">my panting description</p>
+                        <span class="price-main">100,000원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="">
+                    <div class="box-text-main">
+                        <span class="title-main">my panting title</span>
+                        <p class="description-main">my panting description</p>
+                        <span class="price-main">100,000원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="">
+                    <div class="box-text-main">
+                        <span class="title-main">my panting title</span>
+                        <p class="description-main">my panting description</p>
+                        <span class="price-main">100,000원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="">
+                    <div class="box-text-main">
+                        <span class="title-main">my panting title</span>
+                        <p class="description-main">my panting description</p>
+                        <span class="price-main">100,000원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="/static/img/item.png">
+                    <div class="box-text-main">
+                        <span class="title-main">my panting title</span>
+                        <p class="description-main">my panting description</p>
+                        <span class="price-main">100,000원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="/static/img/item.png">
+                    <div class="box-text-main">
+                        <span class="title-main">my panting title</span>
+                        <p class="description-main">my panting description</p>
+                        <span class="price-main">100,000원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="/static/img/item.png">
+                    <div class="box-text-main">
+                        <span class="title-main">my panting title</span>
+                        <p class="description-main">my panting description</p>
+                        <span class="price-main">100,000원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="/static/img/item.png">
+                    <div class="box-text-main">
+                        <span class="title-main">my panting title</span>
+                        <p class="description-main">my panting description</p>
+                        <span class="price-main">100,000원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="/static/img/item.png">
+                    <div class="box-text-main">
+                        <span class="title-main">my panting title</span>
+                        <p class="description-main">my panting description</p>
+                        <span class="price-main">100,000원</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="wrap-filter-category">
-            <ul class="filter-sort filter-main">
-                <span>정렬</span>
-                <li>
-                    <button class="filter-content-btn">등록일</button>
-                </li>
-                <li>
-                    <button class="filter-content-btn">낮은가격</button>
-                </li>
-                <li>
-                    <button class="filter-content-btn">높은가격</button>
-                </li>
-            </ul>
-            <ul class="filter-price filter-main">
-                <span>가격</span>
-                <li>
-                    <button class="filter-content-btn">0~50,000원</button>
-                </li>
-                <li>
-                    <button class="filter-content-btn">50,000~100,000원</button>
-                </li>
-                <li>
-                    <button class="filter-content-btn">100,000~500,000원</button>
-                </li>
-            </ul>
-            <ul class="filter-shape filter-main">
-                <span>그림형태</span>
-                <li>
-                    <button class="filter-content-btn">정방형</button>
-                </li>
-                <li>
-                    <button class="filter-content-btn">가로형</button>
-                </li>
-                <li>
-                    <button class="filter-content-btn">세로형</button>
-                </li>
-            </ul>
-            <div class="filter-box-search filter-main">
-                <button class="filter-btn-search">적용하기</button>
-            </div>
-        </div>
-        <div class="wrap-main">
-            <div class="item-main">
-                <img class="item-img" src="/static/img/item.png" onclick="go_detail()">
-                <div class="box-text-main">
-                    <span class="title-main">my panting title</span>
-                    <p class="description-main">my panting description</p>
-                    <span class="price-main">100,000원</span>
-                </div>
-            </div>
-            <div class="item-main">
-                <img class="item-img" src="/static/img/item.png">
-                <div class="box-text-main">
-                    <span class="title-main">my panting title</span>
-                    <p class="description-main">my panting description</p>
-                    <span class="price-main">100,000원</span>
-
-                </div>
-            </div>
-            <div class="item-main">
-                <img class="item-img" src="/static/img/item.png">
-                <div class="box-text-main">
-                    <span class="title-main">my panting title</span>
-                    <p class="description-main">my panting description</p>
-                    <span class="price-main">100,000원</span>
-                </div>
-            </div>
-            <div class="item-main">
-                <img class="item-img" src="/static/img/item.png">
-                <div class="box-text-main">
-                    <span class="title-main">my panting title</span>
-                    <p class="description-main">my panting description</p>
-                    <span class="price-main">100,000원</span>
-
-                </div>
-            </div>
-            <div class="item-main">
-                <img class="item-img" src="/static/img/item.png">
-                <div class="box-text-main">
-                    <span class="title-main">my panting title</span>
-                    <p class="description-main">my panting description</p>
-                    <span class="price-main">100,000원</span>
-                </div>
-            </div>
-            <div class="item-main">
-                <img class="item-img" src="/static/img/item.png">
-                <div class="box-text-main">
-                    <span class="title-main">my panting title</span>
-                    <p class="description-main">my panting description</p>
-                    <span class="price-main">100,000원</span>
-
-                </div>
-            </div>
-            <div class="item-main">
-                <img class="item-img" src="/static/img/item.png">
-                <div class="box-text-main">
-                    <span class="title-main">my panting title</span>
-                    <p class="description-main">my panting description</p>
-                    <span class="price-main">100,000원</span>
-                </div>
-            </div>
-            <div class="item-main">
-                <img class="item-img" src="/static/img/item.png">
-                <div class="box-text-main">
-                    <span class="title-main">my panting title</span>
-                    <p class="description-main">my panting description</p>
-                    <span class="price-main">100,000원</span>
-
-                </div>
-            </div>
-            <div class="item-main">
-                <img class="item-img" src="/static/img/item.png">
-                <div class="box-text-main">
-                    <span class="title-main">my panting title</span>
-                    <p class="description-main">my panting description</p>
-                    <span class="price-main">100,000원</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+    </section>
 </body>
 
-<!-- JS Import -->
-<script src="../../static/js/main_api.js"></script>
-<script src="../../static/js/main.js"></script>
+<!-- Javascript Import -->
+<!-- 
+<script src="/static/js/main.js"></script>
+<script src="/static/js/nav.js" defer></script>
+-->
+<script src="/static/js/main_init.js"></script>
+
 </html>
