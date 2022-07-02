@@ -41,7 +41,7 @@ async function login() {
         username : document.getElementById("input-id-init").value,
         password : document.getElementById("input-password-init").value,
     }
-
+    
     const response = await fetch(`${backend_base_url}/user/api/token/`, {
         headers: {
             Accept: "application/json",

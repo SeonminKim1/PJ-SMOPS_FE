@@ -1,6 +1,6 @@
 async function loadMainProductPage(){
     console.log("main.js - loadMainProductPage")
-    product_list = await getProductListbyCategory()
+    product_list = await getProductList()
     console.log('===prouct_list ==\n', product_list)
     // const item_main_list = document.getElementsByClassName("item-main")    
     // const item_main_list = document.querySelectorAll(".item-main")
@@ -13,7 +13,7 @@ async function loadMainProductPage(){
 
     for(let i=0; i<item_img_list.length; i++){
         console.log(product_list[i])
-
+        item_img_list[i].setAttribute("id", 'main_product_' + product_list[i]['id'])
         item_img_list[i].src = 'https:/' + product_list[i]['img_path']
         item_title_list[i].innerText = product_list[i]['title']
         item_description_list[i].innerText = product_list[i]['description']

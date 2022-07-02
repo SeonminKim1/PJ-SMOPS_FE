@@ -17,8 +17,21 @@
     <!-- CSS Import -->
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
 </head>
+
+<script>
+function go_detail(){ // get 방식
+    const response = await fetch(`${backend_base_url}/product/detail/3`, {
+        headers: {
+            Accept: "application/json",
+            'Content-type': "application/json"
+        },
+        method: "POST",
+        // body: JSON.stringify(loginData)
+    })
+}
+</script>
+</script>
 <body>
-    <
 <section>
     <div class="container-main">
         <div class="wrap-menu">
@@ -33,7 +46,7 @@
         </div>
         <div class="wrap-main">
             <div class="item-main">
-                <img class="item-img" src="/static/img/item.png">
+                <img class="item-img" src="/static/img/item.png" onclick="go_detail()">
                 <div class="box-text-main">
                     <span class="title-main">my panting title</span>
                     <p class="description-main">my panting description</p>
