@@ -15,13 +15,23 @@
     <script src="https://kit.fontawesome.com/51395e4b23.js" crossorigin="anonymous"></script>
 
     <!-- CSS Import -->
+    <link rel="stylesheet" type="text/css" href="/static/css/nav.css">
     <link rel="stylesheet" type="text/css" href="/static/css/mygallery.css">
 
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     <!-- JS import -->
+    <script src="../../static/js/_base.js"></script>
     <script src="../../static/js/auth.js"></script>
     <script src="../../static/js/mygallery.js"></script>
 </head>
 <body>
+    <nav id="bar-nav">
+        <script>$("#bar-nav").load( "/templates/nav.html" );</script>
+    </nav>
 <section>
     <div class="container-mygallery">
         <div class="wrap-menu">
