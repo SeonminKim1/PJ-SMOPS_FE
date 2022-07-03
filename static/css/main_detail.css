@@ -1,0 +1,31 @@
+.item-main-detail{ /* main 전체 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.item-img-main-detail, .box-text-main-detail{
+    width:400px; height:400px;
+}
+
+.box-text-main-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.line-text-main-detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.line-text-main-detail-center{
+    text-align: center;
+}
+.buy-button{
+    width:100px;
+    height:30px;
+    text-align: center;
+}
