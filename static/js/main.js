@@ -21,9 +21,8 @@ async function loadMainProductPage(category_name) {
     
     if(response.status == 200) {
         MainProductPutData(response_json)
-        alert(response.status)
     } else {
-        alert(response.status)
+        alert('ERROR: ', response.status)
     }
 }
 

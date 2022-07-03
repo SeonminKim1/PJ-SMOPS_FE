@@ -23,9 +23,8 @@ async function loadMainProductDetailPage(){
 
     if(response.status == 200) {
         MainProductDetailPutData(response_json)
-        alert(response.status)
     } else {
-        alert(response.status)
+        alert('ERROR: ', response.status)
     }
 
     return response_json
