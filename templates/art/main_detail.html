@@ -15,23 +15,62 @@
     <script src="https://kit.fontawesome.com/51395e4b23.js" crossorigin="anonymous"></script>
 
     <!-- CSS Import -->
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main_detail.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body onLoad="loadMainProductDetailPage()">
-<section>
-    <div class="container-main-detail">
-        <div class="wrap-main-detail">
-            <div class="item-main-detail">
-                <img class="item-img-detail" src="/static/img/item.png">
-                <div class="box-text-main-detail">
-                    <span class="title-main-detail">my panting title</span>
-                    <p class="description-main-detail">my panting description</p>
-                    <span class="price-main-detail">100,000원</span>
+    <nav id="bar-nav">
+        <script>$("#bar-nav").load( "/templates/nav.html" );</script>
+    </nav>
+    <section>
+        <div class="container-main-detail">
+            <div class="wrap-main-detail">
+                <div class="item-main-detail"> 
+                    <img class="item-img-main-detail" src="/static/img/item.png">
+                    <div class="box-text-main-detail">
+                        <div class="line-text-main-detail-center">
+                            <span class="title-detail">my panting title</span>
+                        </div>
+                        <div class="line-text-main-detail">
+                            <label class="label-detail category">카테고리</label><span class="main-detail category-detail"></span>
+                        </div>
+                        <div class="line-text-main-detail">
+                            <label class="label-detail img-shape">형태</label><span class="main-detail img-shape-detail"></span>
+                        </div>
+                        <div class="line-text-main-detail">
+                            <label class="label-detail create-user">원작자</label><span class="main-detail create-user-detail"></span>
+                        </div>
+                        <div class="line-text-main-detail">
+                            <label class="label-detail selling-user">판매자</label><span class="main-detail selling-user-detail"></span>
+                        </div>
+                        <div class="line-text-main-detail">
+                            <label class="label-detail update-date">등록일</label><span class="main-detail update-date-detail"></span>
+                        </div>
+                        <div class="line-text-main-detail">
+                            <label class="label-detail price">가격</label><span class="main-detail price-detail"></span>
+                        </div>
+                        <div class="line-text-main-detail">
+                            <p class="description-detail">my panting description</p>
+                        </div>
+                        <div class="line-text-main-detail-center">
+                            <span class="log-detail">로그 보기</span>
+                        </div>
+                        <div class="line-text-main-detail-center">
+                            <span class="log-content-detail">로그 내용</span>
+                        </div>
+                        <div class="line-text-main-detail-center">
+                           <button class="buy-button" onclick="buy_product()">구매하기</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 </body>
 
