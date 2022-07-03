@@ -18,6 +18,8 @@ async function style_transfer(){
     console.log(response)
     console.log(typeof(response))
     console.log(response["body"])
+
+    
     
     
 }
