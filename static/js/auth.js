@@ -1,6 +1,12 @@
+const backend_base_url = "http://127.0.0.1:8000";
+const frontend_base_url = "http://127.0.0.1:5500";
+
 window.onload = ()=>{
     const payload = JSON.parse(localStorage.getItem("payload"));
 
+    if (payload == null){
+        window.location.replace(`${frontend_base_url}/templates/user/login.html`);
+    }
     // 아직 access 토큰의 인가 유효시간이 남은 경우
     if (payload.exp > (Date.now() / 1000)){
 
@@ -20,7 +26,7 @@ window.onload = ()=>{
         };
 
         // 다시 인증 받은 accessToken을 localStorage에 저장하자.
-        requestRefreshToken("/user/api/token/refresh/").then((data)=>{
+        requestRefreshToken(`${backend_base_url}/user/api/token/refresh/`).then((data)=>{
             // 새롭게 발급 받은 accessToken을 localStorage에 저장
             const accessToken = data.access;
             localStorage.setItem("access", accessToken);
