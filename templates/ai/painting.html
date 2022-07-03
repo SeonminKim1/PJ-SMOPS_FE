@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMOPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;500;900&display=swap"
+            rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/51395e4b23.js" crossorigin="anonymous"></script>
+
+    <!-- CSS Import -->
+    <link rel="stylesheet" type="text/css" href="/static/css/painting.css">
+</head>
+<body>
+<section class="container-painting">
+    <form method="post" enctype="multipart/form-data">
+        <div class="wrap-content-painting">
+            <div class="box-base box-img">
+                <span>그림 이미지를 넣어주세요</span>
+                <label class="label-img" for="base_img">Click!</label>
+                <input type="file" id="base_img" name="base_img"
+                       accept=".jpg, .jpeg, .png">
+            </div>
+            <div class="box-style box-img">
+                <span>그림 스타일을 넣어주세요</span>
+                <label class="label-img" for="style_img">Click!</label>
+                <input type="file" id="style_img" name="style_img"
+                       accept=".jpg, .jpeg, .png">
+            </div>
+        </div>
+        <div class="box-btn-painting">
+            <button class="btn-painting">그림 제작하기!</button>
+        </div>
+    </form>
+</section>
+</body>
+</html>
