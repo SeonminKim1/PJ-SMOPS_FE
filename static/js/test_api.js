@@ -1,30 +1,50 @@
-const backend_base_url = "http://127.0.0.1:8000";
-const frontend_base_url = "http//127.0.0.1:5500";
 
 // 비동기 통신 async
-async function getMyGalleryList(){
-    console.log("mygallery_list")
-    // const Data = {
-    //     username : document.getElementById("username").value
-    // }
-     
-    const response = await fetch(`${backend_base_url}/mygallery/`,{
+async function style_transfer(){
+
+    var formdata = new FormData();
+    formdata.append("content", document.querySelector("#base_file").files[0])
+    formdata.append("style", document.querySelector("#style_file").files[0])
+
+    const response = await fetch(`${backend_base_url}/ai/inference/`,{
         headers:{
-            Accept: "application/json",
-            'content-type': "application/json"
+            // Accept: "application/json",
+            // 'content-type': "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("access"),
         },
-        method: 'GET',
-        // body: JSON.stringify(Data)
+        method: 'POST',
+        body: formdata,
     })
+    console.log(response)
+    console.log(typeof(response))
+    console.log(response["body"])
+    
+    
+}
 
-    response_json = await response.json()    
 
-    return response_json
 
-    // if (response.status == 200){
-    //     window.location.replace('$(frontend_base_url}/test.html');
-    // } else {
-    //     alert(response.status)
-    // }
 
+// 이미지 미리보기
+function base_image_preview(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('result_base_file').src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      document.getElementById('result_base_file').src = "";
+    }
+}
+function style_image_preview(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('result_style_file').src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      document.getElementById('result_style_file').src = "";
+    }
 }

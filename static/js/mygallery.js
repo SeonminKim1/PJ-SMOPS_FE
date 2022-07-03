@@ -35,13 +35,14 @@ async function getMyGalleryList(){
             // class 명 지정
             item_mygallery.className = 'item-mygallery';
             // innerHTML로 원하는 형태로 데이터 출력
-            item_mygallery.innerHTML = `<img src="${img_src}" id=product_img_${mygallery.id} onclick="product_info(${mygallery.id})">
-                                        <div class="box-text-mygallery">
-                                            <span class="title-mygallery">${mygallery.title}</span>
-                                            <p>${mygallery.description}</p>
-                                            <span>${mygallery.price}</span>
-                                            <span class="sell-status">${mygallery.is_selling}</span>
-                                        </div>`
+            item_mygallery.innerHTML = `
+            <img src="${img_src}" id=product_img_${mygallery.id} onclick="product_info(${mygallery.id})">
+            <div class="box-text-mygallery">
+                <span class="title-mygallery">${mygallery.title}</span>
+                <p>${mygallery.description}</p>
+                <span>가격 : ${mygallery.price}</span>
+                <span class="sell-status">${mygallery.is_selling}</span>
+            </div>`
             console.log(item_mygallery)
             // 상품리스트에 출력하기위해 만든 div append
             list_box.append(item_mygallery)
@@ -67,7 +68,7 @@ async function product_info(product_id) {
     response_json = await response.json()    
     
     if (response.status == 200){
-        
+
     }
 
 }

@@ -1,7 +1,3 @@
-const backend_base_url = "http://127.0.0.1:8000"
-const frontend_base_url = "http://127.0.0.1:5500"
-
-
 async function join(){
 
     // 입력받은 데이터 가져오기
@@ -67,7 +63,7 @@ async function login() {
 
         localStorage.setItem("payload", jsonPayload);
         // window.location.replace(`${frontend_base_url}/`);
-        window.location.replace(`${frontend_base_url}/templates/art/mygallery.html`);
+        window.location.replace(`${frontend_base_url}/templates/art/main.html`);
     } else {
         alert(response.status)
     }

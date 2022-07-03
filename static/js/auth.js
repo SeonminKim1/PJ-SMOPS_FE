@@ -1,6 +1,3 @@
-const backend_base_url = "http://127.0.0.1:8000";
-const frontend_base_url = "http://127.0.0.1:5500";
-
 window.onload = ()=>{
     const payload = JSON.parse(localStorage.getItem("payload"));
 
@@ -33,23 +30,4 @@ window.onload = ()=>{
         });
     }
 
-
-    // 인증여부 확인 fetch api 통신
-    const onRequestButtonClick = () => {
-        const requestAuthData = async () => {
-            const response = await fetch(`${backend_base_url}/user/api/authonly/`, {
-                method:"GET",
-                headers: {
-                    'Content-Type': 'application/json',
-                    "Authorization": "Bearer " +localStorage.getItem("access")
-                },
-            });
-    
-            return response.json();
-        }
-        requestAuthData().then((data)=>{
-            // 인증여부 에 대해서 메세지 뿌리기
-            //   document.querySelector("#auth-only").value = data.message;
-        })
-    };
 };
