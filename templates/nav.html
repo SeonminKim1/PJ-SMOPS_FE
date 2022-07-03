@@ -1,3 +1,11 @@
+<script> 
+    async function logout(){
+        localStorage.clear
+        alert("로그아웃 완료되었습니다.")
+        window.location.replace(`${frontend_base_url}/templates/user/login.html`);
+    }
+</script>
+
 <div class="container-nav">
     <div class="box-ai-nav">
         <a href="" class="painting-menu-nav">CREATE PAINTING</a>
@@ -8,7 +16,7 @@
     <ul class="box-menu-nav">
         <li><a href="" class="menu-nav">USERNAME</a></li>
         <li><a href="" class="menu-nav">MY GALLERY</a></li>
-        <li><a href="" class="menu-nav">LOGOUT</a></li>
+        <li><a onclick="logout()" class="menu-nav">LOGOUT</a></li>
     </ul>
     <a href="#" class="bar-toggle-nav">
         <i class="fa-solid fa-bars"></i>

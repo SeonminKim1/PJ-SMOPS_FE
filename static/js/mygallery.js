@@ -1,6 +1,3 @@
-const backend_base_url = "http://127.0.0.1:8000";
-const frontend_base_url = "http//127.0.0.1:5500";
-
 // 비동기 통신 async
 async function getMyGalleryList(){
     console.log("mygallery_list")
@@ -12,7 +9,7 @@ async function getMyGalleryList(){
         headers:{
             Accept: "application/json",
             'content-type': "application/json",
-            Authorization: "Bearer " + localStorage.getItem("access")
+            "Authorization": "Bearer " + localStorage.getItem("access")
         },
         method: 'GET',
         // body: JSON.stringify(Data)
@@ -38,7 +35,7 @@ async function getMyGalleryList(){
             // class 명 지정
             item_mygallery.className = 'item-mygallery';
             // innerHTML로 원하는 형태로 데이터 출력
-            item_mygallery.innerHTML = `<img src="${img_src}" id=product_img_${mygallery.id}>
+            item_mygallery.innerHTML = `<img src="${img_src}" id=product_img_${mygallery.id} onclick="product_info(${mygallery.id})">
                                         <div class="box-text-mygallery">
                                             <span class="title-mygallery">${mygallery.title}</span>
                                             <p>${mygallery.description}</p>
@@ -49,14 +46,28 @@ async function getMyGalleryList(){
             // 상품리스트에 출력하기위해 만든 div append
             list_box.append(item_mygallery)
 
-           
-           
-
-
-            
         });
     }
 
 }
-
 getMyGalleryList();
+
+
+async function product_info(product_id) {
+    const response = await fetch(`${backend_base_url}/mygallery/${product_id}`,{
+        headers:{
+            Accept: "application/json",
+            'content-type': "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("access")
+        },
+        method: 'GET',
+        // body: JSON.stringify(Data)
+    })
+
+    response_json = await response.json()    
+    
+    if (response.status == 200){
+        
+    }
+
+}
