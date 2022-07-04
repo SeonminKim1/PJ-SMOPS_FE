@@ -13,38 +13,25 @@ body {
 }
 
 .wrap-menu {
-    display: flex;
     width: 80%;
-    justify-content: space-between;
     padding: 1rem;
     margin: 10px auto;
-    font-size: 1.2rem;
 }
 
-.box-filter>span {
+.wrap-menu>span {
     font-size: 1.5rem;
     font-weight: 500;
 }
 
-.box-search>input {
-    width: 240px;
-    height: 40px;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid black;
-    border-radius: 0;
-    text-indent: 10px;
-}
-
 .wrap-mygallery {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 80%;
-    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin: 0 auto;
 }
 
-.item-mygallery > img {
+.item-mygallery>img {
     background-color: white;
     display: block;
     width: 256px;
@@ -201,7 +188,7 @@ body {
     width: 80%;
 }
 
-.status-modal-mygallery-info > div {
+.status-modal-mygallery-info>div {
     margin-top: 4%;
 }
 
