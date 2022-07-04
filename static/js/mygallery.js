@@ -71,8 +71,9 @@ async function getMyGalleryList() {
                             <p>아티스트 : ${mygallery.created_user}</p>
                             <p>작품명 : ${mygallery.title}</p>
                             <p>생성일자 : ${created_dateString}</p>
+                            <p class="long-desc">작품설명 : ${mygallery.description}</p>
                             <h4>히스토리</h4>
-                            <div id=history_box_${mygallery.id}></div>
+                            <div id=history_box_${mygallery.id} class="history-list"></div>
                         </div>
                     </div>
                     <hr>
@@ -94,9 +95,9 @@ async function getMyGalleryList() {
                         <img src="${img_src}">
                         <div class="status-modal-mygallery-info">
                             <div><label for="is_selling_${mygallery.id}">판매상태 :
-                                <select id="is_selling_${mygallery.id}">
-                                    <option value="0">소유 중</option>
+                                <select id="is_selling_${mygallery.id}" value="${mygallery.is_selling}">
                                     <option value="1">판매 중</option>
+                                    <option value="0">소유 중</option>
                                 </select>
                             </label></div>
                             <div><label for="price_${mygallery.id}">가격 : <input id="price_${mygallery.id}" type="text" value="${mygallery.price}"></label></div>
@@ -174,7 +175,7 @@ async function updateProduct(product_id) {
         method: 'PUT',
         body: JSON.stringify(Data)
     })
-    alert("수정이 완료되었습니다!")
+    alert("수정이 완료되었습니다.")
     window.location.reload()
 
 
@@ -185,35 +186,47 @@ var detail_modal;
 function detail_modalOn(product_id) {
     detail_modal = document.getElementById("detail_modal_" + product_id)
     detail_modal.style.display = "flex"
-    console.log(detail_modal)
+    detail_modal.style.top = window.pageYOffset + 'px';
+    document.querySelector('body').style.overflow = 'hidden'
 }
 
 // detail modal off
 function detail_modalOff(product_id) {
     detail_modal = document.getElementById("detail_modal_" + product_id)
     detail_modal.style.display = "none"
+    detail_modal.style.top = window.pageYOffset + 'px';
+    document.querySelector('body').style.overflow = 'scroll'
 }
-
 
 var status_modal;
 // status modal on
 function status_modalOn(product_id) {
     status_modal = document.getElementById("status_modal_" + product_id)
-    console.log(status_modal)
     status_modal.style.display = "flex"
+    status_modal.style.top = window.pageYOffset + 'px';
+    document.querySelector('body').style.overflow = 'hidden'
 }
 
 // status modal off
 function status_modalOff(product_id) {
     status_modal = document.getElementById("status_modal_" + product_id)
     status_modal.style.display = "none"
+    status_modal.style.top = window.pageYOffset + 'px';
+    document.querySelector('body').style.overflow = 'scroll'
 }
 
 
+// 모달창 바깥 클릭 시 모달창 닫히게
+window.addEventListener("click", e => {
+    const evTarget = e.target
+    if (evTarget.classList.contains("modal-overlay")) {
+        detail_modal.style.display = "none";
+    }
+})
 
-// detail_modal.addEventListener("click", e => {
-//     const evTarget = e.target
-//     if (evTarget.classList.contains("modal_overlay")) {
-//         detail_modal.style.display = "none"
-//     }
-// })
+window.addEventListener("click", e => {
+    const evTarget = e.target
+    if (evTarget.classList.contains("modal-overlay")) {
+        status_modal.style.display = "none";
+    }
+})
