@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/painting.css">
 </head>
 <body>
-<section class="container-painting">
+<section id="painting" class="container-painting">
     <form method="post" enctype="multipart/form-data">
         <div class="wrap-content-painting">
             <div class="box-base box-img">
@@ -35,9 +35,58 @@
             </div>
         </div>
         <div class="box-btn-painting">
-            <button class="btn-painting">그림 제작하기!</button>
+            <button type="button" class="btn-painting" onclick="showProcess()">그림 제작하기!</button>
+        </div>
+    </form>
+</section>
+
+<!-- 추론 페이지 -->
+<section id="process" class="container-process">
+    <div class="box-process">
+        <span class="text-process">PROCESS</span>
+    </div>
+</section>
+
+<!-- 결과 페이지 -->
+<section class="container-result">
+    <form method="post" enctype="multipart/form-data">
+        <div class="wrap-content-result">
+            <div class="box-result box-img-result">
+                결과 이미지
+            </div>
+            <div class="box-result box-text-result">
+                <div class="box-text">
+                    <div class="text-title">
+                        <input type="text" value="제목">
+                    </div>
+                    <div class="text-price">
+                        <input type="text" value="가격">
+                    </div>
+                    <div class="text-category">
+                        <span>카테고리</span>
+                        <div class="wrap-radio radio-top">
+                            <div class="box-radio">
+                                <input class="radio" type="radio" name="painting-category" value="인물화"> 인물화
+                                <input class="radio" type="radio" name="painting-category" value="풍경화"> 풍경화
+                            </div>
+                            <div class="box-radio radio-bottom">
+                                <input class="radio" type="radio" name="painting-category" value="정물화"> 정물화
+                                <input class="radio" type="radio" name="painting-category" value="동물화"> 동물화
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-btn-result">
+                    <input class="btn-result" type="submit" value="등록하기">
+                </div>
+            </div>
         </div>
     </form>
 </section>
 </body>
+<script>
+    function showProcess() {
+        document.getElementById('process').style.display = "block";
+    }
+</script>
 </html>
