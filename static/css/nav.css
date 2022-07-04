@@ -63,6 +63,11 @@ a {
     padding: 8px 15px;
 }
 
+.menu-nav-user {
+    padding: 8px 15px;
+}
+
+
 .menu-nav:hover {
     background-color: blue;
     color: white;

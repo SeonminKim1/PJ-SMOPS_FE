@@ -4,18 +4,39 @@
         alert("로그아웃 완료되었습니다.")
         window.location.replace(`${frontend_base_url}/templates/user/login.html`);
     }
+
+    async function user_info(){
+        const response = await fetch(`${backend_base_url}/user/`, {
+            headers: {
+                Accept: "application/json",
+                'content-type': "application/json",
+                "Authorization": "Bearer " + localStorage.getItem("access")
+            },
+            method: 'GET',
+            
+        })
+        response_json = await response.json()
+        fullname = response_json["fullname"] + "님"
+
+        const list = document.querySelector('.box-menu-nav');
+        const item = document.createElement('li')
+        item.className = "menu-nav-user"
+        item.innerText = fullname
+        list.prepend(item)
+
+    }
+    user_info()
 </script>
 
 <div class="container-nav">
     <div class="box-ai-nav">
-        <a href="" class="painting-menu-nav">CREATE PAINTING</a>
+        <a href="/templates/ai/painting.html" class="painting-menu-nav">CREATE PAINTING</a>
     </div>
     <div class="box-logo-nav">
-        <a href="" class="logo-nav">SMOPS</a>
+        <a href="/templates/art/main.html" class="logo-nav">SMOPS</a>
     </div>
     <ul class="box-menu-nav">
-        <li><a href="" class="menu-nav">USERNAME</a></li>
-        <li><a href="" class="menu-nav">MY GALLERY</a></li>
+        <li><a href="/templates/art/mygallery.html" class="menu-nav">MY GALLERY</a></li>
         <li><a onclick="logout()" class="menu-nav">LOGOUT</a></li>
     </ul>
     <a href="#" class="bar-toggle-nav">

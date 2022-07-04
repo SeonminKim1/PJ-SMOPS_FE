@@ -14,8 +14,13 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/51395e4b23.js" crossorigin="anonymous"></script>
 
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!-- CSS Import -->
     <link rel="stylesheet" type="text/css" href="/static/css/painting.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/nav.css">
     
     <!-- JS Import -->
     <script src="/static/js/_base.js"></script>
@@ -24,6 +29,9 @@
 
 </head>
 <body>
+<nav id="bar-nav">
+    <script>$("#bar-nav").load( "/templates/nav.html" );</script>
+</nav>
 <section id="painting" class="container-painting">
     <form method="post" enctype="multipart/form-data">
         <div class="wrap-content-painting">
