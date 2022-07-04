@@ -5,27 +5,40 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Test Page</title>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
+
+        <script src="../static/js/_base.js"></script>
+        <script src="../static/js/auth.js"></script>
         <script src="../static/js/test_api.js"></script>
-=======
-        <script src="../static/js/api.js"></script>
->>>>>>> Stashed changes
-=======
-        <script src="../static/js/api.js"></script>
->>>>>>> Stashed changes
-        <script src="../static/js/index.js"></script>
+        
     </head>
     <body>
         <h1>Hello</h1>
-        <h2 id="username">유저의 이름 : <span id="username"></span></h2>
-        <h2> 반갑습니다 </h2>
-        <button type="button" onclick="loadMyGalleryList()">내상품 출력하기</button>
-
-        <ol id="mygallery"></ol>
         
-        <img src="" alt="" id="images" width="200" height="200">
-        <img src="https://luckyseven-todaylunch.s3.ap-northeast-2.amazonaws.com/Screenshot_220529_184837.jpg" width="200" height="200">
-        <div class="img_div">
+        베이스 : <input type="file" id="base_file" onchange="base_image_preview(this)"> <br>
+        <img src="" alt="" id="result_base_file" width="50" height="50"> <br>
+
+        스타일 : <input type="file" id="style_file" onchange="style_image_preview(this)"> <br>
+        <img src="" alt="" id="result_style_file" width="50" height="50"> <br>
+
+        <button type="button" onclick="style_transfer()">합치기</button><br>
+
+        결과 <br>
+        <img src="" alt="" id="result_file" width="50" height="50"> <br>
+        
+        제목 : <input type="text" id="title"> <br>
+        설명 : <input type="text" id="description"> <br>
+        가격 : <input type="text" id="price"> <br>
+        형태 : 
+        <input type="radio" id="shape" value=1 checked>가로형
+        <input type="radio" id="shape" value=2>세로형
+        <br>
+        카테고리 : 
+        <input type="checkbox" id="category" value=1 checked>인물
+        <input type="checkbox" id="category" value=2>사물
+        <br>
+        <button type="button" onclick="product_upload()">등록</button>
+
+        
     </body>
 </html>
