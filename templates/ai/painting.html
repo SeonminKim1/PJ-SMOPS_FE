@@ -16,26 +16,36 @@
 
     <!-- CSS Import -->
     <link rel="stylesheet" type="text/css" href="/static/css/painting.css">
+    
+    <!-- JS Import -->
+    <script src="/static/js/_base.js"></script>
+    <script src="../../static/js/auth.js"></script>
+    <script src="/static/js/painting.js"></script>
+
 </head>
 <body>
 <section id="painting" class="container-painting">
     <form method="post" enctype="multipart/form-data">
         <div class="wrap-content-painting">
             <div class="box-base box-img">
-                <span>그림 이미지를 넣어주세요</span>
+                <div id="base_img_preview">
+                    <span>그림 이미지를 넣어주세요</span>
+                </div>
                 <label class="label-img" for="base_img">Click!</label>
                 <input type="file" id="base_img" name="base_img"
-                       accept=".jpg, .jpeg, .png">
+                accept=".jpg, .jpeg, .png" onchange="base_image_preview(this)">
             </div>
             <div class="box-style box-img">
-                <span>그림 스타일을 넣어주세요</span>
+                <div id="style_img_preview">
+                    <span>그림 스타일을 넣어주세요</span>
+                </div>
                 <label class="label-img" for="style_img">Click!</label>
                 <input type="file" id="style_img" name="style_img"
-                       accept=".jpg, .jpeg, .png">
+                       accept=".jpg, .jpeg, .png" onchange="style_image_preview(this)">
             </div>
         </div>
         <div class="box-btn-painting">
-            <button type="button" class="btn-painting" onclick="showProcess()">그림 제작하기!</button>
+            <button type="button" class="btn-painting" onclick="style_transfer()">그림 제작하기!</button>
         </div>
     </form>
 </section>
@@ -52,41 +62,47 @@
     <form method="post" enctype="multipart/form-data">
         <div class="wrap-content-result">
             <div class="box-result box-img-result">
-                결과 이미지
+                <img src="" id="result_file" width="300px" height="300px">
             </div>
             <div class="box-result box-text-result">
                 <div class="box-text">
                     <div class="text-title">
-                        <input type="text" value="제목">
+                        제목 : <input id="title" type="text" placeholder="제목">
                     </div>
                     <div class="text-price">
-                        <input type="text" value="가격">
+                        가격 : <input id="price" type="text" placeholder="가격">
                     </div>
                     <div class="text-category">
                         <span>카테고리</span>
                         <div class="wrap-radio radio-top">
                             <div class="box-radio">
-                                <input class="radio" type="radio" name="painting-category" value="인물화"> 인물화
-                                <input class="radio" type="radio" name="painting-category" value="풍경화"> 풍경화
+                                <input class="category" type="radio" name="painting-category" value="1"> 인물화
+                                <input class="category" type="radio" name="painting-category" value="2"> 풍경화
                             </div>
                             <div class="box-radio radio-bottom">
-                                <input class="radio" type="radio" name="painting-category" value="정물화"> 정물화
-                                <input class="radio" type="radio" name="painting-category" value="동물화"> 동물화
+                                <input class="category" type="radio" name="painting-category" value="3"> 정물화
+                                <input class="category" type="radio" name="painting-category" value="4"> 동물화
+                            </div>
+                        <div class="wrap-radio radio-top">
+                            <div class="box-radio">
+                                <input class="shape" type="radio" name="painting-shape" value="1"> 정방형
+                                <input class="shape" type="radio" name="painting-shape" value="2"> 가로형
+                                <input class="shape" type="radio" name="painting-shape" value="3"> 세로형
+                            </div>
+                            <div class="text-description">
+                                <input id="description" type="text">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="box-btn-result">
-                    <input class="btn-result" type="submit" value="등록하기">
+                    <input class="btn-result" type="button" onclick="product_upload()" value="등록하기">
                 </div>
             </div>
         </div>
     </form>
 </section>
+
+
 </body>
-<script>
-    function showProcess() {
-        document.getElementById('process').style.display = "block";
-    }
-</script>
 </html>
