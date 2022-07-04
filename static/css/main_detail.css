@@ -1,31 +1,81 @@
-.item-main-detail{ /* main 전체 */
+.container-main-detail {
+    margin-top: 5%;
+}
+
+.wrap-main-detail {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: auto;
 }
 
+.img-main-detail,
+.box-text-main-detail {
+    width: 400px;
+    height: 400px;
 
-.item-img-main-detail, .box-text-main-detail{
-    width:400px; height:400px;
 }
 
-.box-text-main-detail{
+.box-text-main-detail {
     display: flex;
     flex-direction: column;
-    justify-content: left;
 }
 
-.line-text-main-detail{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.line-text-main-detail {
+    padding: 2px;
+    margin: 10px 0;
+    font-weight: 600;
 }
 
-.line-text-main-detail-center{
-    text-align: center;
+.box-title-main-detail {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
 }
-.buy-button{
-    width:100px;
-    height:30px;
-    text-align: center;
+
+.description-detail {
+    font-weight: 400;
+}
+
+.btn-log,
+.btn-log-content,
+.btn-buy {
+    border: none;
+    width: 90%;
+    height: 50px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    background-color: lightgray;
+}
+
+.btn-log:hover,
+.btn-log-content:hover,
+.btn-buy:hover {
+    font-weight: 600;
+    color: white;
+}
+
+.btn-log:hover,
+.btn-log-content:hover {
+    background-color: blue;
+}
+
+.btn-buy:hover {
+    background-color: blueviolet;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container-main-detail {
+        margin-top: 10%;
+    }
+
+    .wrap-main-detail {
+        flex-direction: column;
+    }
+
+    .wrap-text-main-detail {
+        margin: 30px 0 0 40px;
+    }
 }
