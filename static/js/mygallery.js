@@ -53,7 +53,7 @@ async function getMyGalleryList() {
                 <span class="title-mygallery">${mygallery.title}</span>
                 <p>창작자 : ${mygallery.created_user}</p>
                 <span>가격 : ${mygallery.price}</span>
-                <span class="sell-status" onclick="status_modalOn(${mygallery.id})">${is_selling}</span>
+                <span class="sell-status_${mygallery.is_selling}" onclick="status_modalOn(${mygallery.id})">${is_selling}</span>
             </div>
             
             <!-- detail_Modal -->
