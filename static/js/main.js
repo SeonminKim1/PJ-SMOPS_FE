@@ -58,7 +58,7 @@ function MainProductPutData(product_list){
             item_img_list[i].src = 'https:/' + product_list[i]['img_path']
             item_title_list[i].innerText = product_list[i]['title']
             item_description_list[i].innerText = product_list[i]['description']
-            item_price_list[i].innerText = product_list[i]['price']
+            item_price_list[i].innerText = product_list[i]['price'] +'원'
         }
     }
 }

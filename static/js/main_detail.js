@@ -56,7 +56,7 @@ function MainProductDetailPutData(product_one){
     selling_user_detail.innerText = product_one['owner_user']
     img_shape_detail.innerText = product_one['img_shape']
     update_date_detail.innerText = created_dateString
-    price_detail.innerText = product_one['price']
+    price_detail.innerText = product_one['price'] +'원'
     description_detail.text = product_one['description']
     
     // json log data convert to logline
@@ -76,8 +76,39 @@ function MainProductDetailPutData(product_one){
     log_content_detail.innerText = log_text
 }
 
-function buy_product(){
-    if(confirm("작품을 구매하시겠습니까?")){
-        alert('my-gallery-page로 이동.')
+async function buy_product(){
+    if(confirm("작품을 구매하시겠습니까?")){        
+        // 입력받은 데이터 가져오기
+        let product_id;
+        if(localStorage.getItem('product_img_id')){
+            product_id = localStorage.getItem('product_img_id')
+        }
+        product_id = product_id.replace(MAIN_PROUCT_IMG_ID, '')
+        product_id = parseInt(product_id)
+
+        const price = parseInt((document.querySelector('.price-detail').innerText).replace('원',''))
+
+        const date = new Date();
+        const update_date = date.getFullYear() + '-' + (date.getMonth() + 1)  + '-' + date.getDate();
+
+        const formData = {
+            product_id : product_id,
+            price : price,
+            updated_date : update_date
+        }
+
+        const response = await fetch(`${backend_base_url}/product/detail/buy/log/`,{
+            headers:{
+                'content-type': "application/json",
+                "Authorization": "Bearer " + localStorage.getItem("access")
+            },
+            method: "POST",
+            body: JSON.stringify(formData)
+        })
+        console.log('==response', response)
+        confirm('구매 완료 되었습니다.')
+        window.location.replace(`${frontend_base_url}/templates/art/mygallery.html`);
+    }else{
+        confirm('구매가 취소 되었습니다.')
     }
 }
