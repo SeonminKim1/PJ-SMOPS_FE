@@ -40,50 +40,45 @@
                     <a href="#" id="filter_id" class="filter-active">FILTER</a>
                 </div>
                 <div class="box-search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" name="q" placeholder="검색">
+                    <input type="search" class="item-search" name="q" placeholder="검색">
+                    <i class="fa-solid fa-magnifying-glass" onclick = "getSearchResult()"></i>
                 </div>
             </div>
             <!-- Filtering -->
             <div class="wrap-filter-category">
-                <ul class="filter-sort filter-main">
+                <div>
                     <span>정렬</span>
-                    <li>
-                        <button class="filter-content-btn">등록일</button>
-                    </li>
-                    <li>
-                        <button class="filter-content-btn">낮은가격</button>
-                    </li>
-                    <li>
-                        <button class="filter-content-btn">높은가격</button>
-                    </li>
-                </ul>
-                <ul class="filter-price filter-main">
+                    <input type='radio' class = 'radio-btn' name='ordering' id='created_date' value="latest_date"/>
+                    <label for='created_date'>등록일</label>
+                    <input type='radio' class = 'radio-btn' name='ordering' id='price_up' value="ascending_price"/>
+                    <label for='price_up' />낮은가격</label>
+                    <input type='radio' class = 'radio-btn' name='ordering' id='price_down' value="descending_price"/>
+                    <label for='price_down' />높은가격</label>
+                </div>
+
+                <div>
                     <span>가격</span>
-                    <li>
-                        <button class="filter-content-btn">0~50,000원</button>
-                    </li>
-                    <li>
-                        <button class="filter-content-btn">50,000~100,000원</button>
-                    </li>
-                    <li>
-                        <button class="filter-content-btn">100,000~500,000원</button>
-                    </li>
-                </ul>
-                <ul class="filter-shape filter-main">
+                    <!--
+                    <input type='radio' class = 'radio-btn' name='price' id='from_0_to_10000000' value="0~10,000,000원"/>
+                    <label for='from_0_to_10000000' />전체</label>-->
+                    <input type='radio' class = 'radio-btn' name='price' id='from_0_to_50000' value="0~50,000원"/>
+                    <label for='from_0_to_50000' />0~50,000원</label>
+                    <input type='radio' class = 'radio-btn' name='price' id='from_50000_to_100000' value="50,000~0원"/>
+                    <label for='from_50000_to_100000' />50,000~0원</label>
+                    <input type='radio' class = 'radio-btn' name='price' id='from_100000_to_500000' value="100,000~500,000원"/>
+                    <label for='from_100000_to_500000' />100,000~500,000원</label>
+                </div>
+                <div>
                     <span>그림형태</span>
-                    <li>
-                        <button class="filter-content-btn">정방형</button>
-                    </li>
-                    <li>
-                        <button class="filter-content-btn">가로형</button>
-                    </li>
-                    <li>
-                        <button class="filter-content-btn">세로형</button>
-                    </li>
-                </ul>
+                    <input type='radio' class = 'radio-btn' name='img_shape' id='square_img' value="정방형"/>
+                    <label for='square_img' />정방형</label>
+                    <input type='radio' class = 'radio-btn' name='img_shape' id='horizontal_img'value="가로형" />
+                    <label for='horizontal_img' />가로형</label>
+                    <input type='radio' class = 'radio-btn' name='img_shape' id='vertical_img' value="세로형"/>
+                    <label for='vertical_img' />세로형</label>
+                </div>
                 <div class="filter-box-search filter-main">
-                    <button class="filter-btn-search" onclick="Filter_">적용하기</button>
+                    <button class="filter-btn-search" onclick="getFilterResult()">적용하기</button>
                 </div>
             </div>
 
@@ -92,77 +87,77 @@
                 <div class="item-main">
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
-                        <span class="title-main">my panting title</span>
-                        <p class="description-main">my panting description</p>
-                        <span class="price-main">100,000원</span>
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
                     </div>
                 </div>
                 <div class="item-main">
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
-                        <span class="title-main">my panting title</span>
-                        <p class="description-main">my panting description</p>
-                        <span class="price-main">100,000원</span>
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
 
                     </div>
                 </div>
                 <div class="item-main">
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
-                        <span class="title-main">my panting title</span>
-                        <p class="description-main">my panting description</p>
-                        <span class="price-main">100,000원</span>
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
                     </div>
                 </div>
                 <div class="item-main">
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
-                        <span class="title-main">my panting title</span>
-                        <p class="description-main">my panting description</p>
-                        <span class="price-main">100,000원</span>
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
 
                     </div>
                 </div>
                 <div class="item-main">
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
-                        <span class="title-main">my panting title</span>
-                        <p class="description-main">my panting description</p>
-                        <span class="price-main">100,000원</span>
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
                     </div>
                 </div>
                 <div class="item-main">
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
-                        <span class="title-main">my panting title</span>
-                        <p class="description-main">my panting description</p>
-                        <span class="price-main">100,000원</span>
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
 
                     </div>
                 </div>
                 <div class="item-main">
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
-                        <span class="title-main">my panting title</span>
-                        <p class="description-main">my panting description</p>
-                        <span class="price-main">100,000원</span>
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
                     </div>
                 </div>
                 <div class="item-main">
                     <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
-                        <span class="title-main">my panting title</span>
-                        <p class="description-main">my panting description</p>
-                        <span class="price-main">100,000원</span>
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
 
                     </div>
                 </div>
                 <div class="item-main">
                     <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
-                        <span class="title-main">my panting title</span>
-                        <p class="description-main">my panting description</p>
-                        <span class="price-main">100,000원</span>
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
                     </div>
                 </div>
             </div>

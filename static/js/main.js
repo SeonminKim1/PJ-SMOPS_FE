@@ -10,7 +10,7 @@ async function loadMainProductPage() {
     if(localStorage.getItem('category_name')){
         category_name = localStorage.getItem('category_name')
     }else{
-        category_name = `${default_category}`
+        category_name = `${DEFAULT_CATEGORY}`
     }
 
     console.log("main.js - loadMainProductPage", category_name)
@@ -54,7 +54,7 @@ function MainProductPutData(product_list){
             item_description_list[i].style.visibility = "visible"
             item_price_list[i].style.visibility = "visible"
 
-            item_img_list[i].setAttribute("id", main_product_img_id + product_list[i]['id'])
+            item_img_list[i].setAttribute("id", MAIN_PROUCT_IMG_ID + product_list[i]['id'])
             item_img_list[i].src = 'https:/' + product_list[i]['img_path']
             item_title_list[i].innerText = product_list[i]['title']
             item_description_list[i].innerText = product_list[i]['description']
@@ -77,3 +77,81 @@ document.addEventListener("DOMContentLoaded", () => {
         filterDropDown.classList.toggle('active');
     });
 });
+
+// 필터링
+async function getFilterResult() {
+    console.log("main.js - getFilterResult")
+    const ordering_radio = document.getElementsByName('ordering')
+    const price_radio = document.getElementsByName('price')
+    const img_shape_radio = document.getElementsByName('img_shape')
+
+    let category_name;
+    if(localStorage.getItem('category_name')){
+        category_name = localStorage.getItem('category_name')
+    }else{
+        category_name = `${DEFAULT_CATEGORY}`
+    }
+
+    var ordering_value='', price_value='', img_shape_value='';
+    ordering_radio.forEach((node) => { if(node.checked){ ordering_value = node.value }}) 
+    price_radio.forEach((node) => { if(node.checked){ price_value = node.value }})
+    img_shape_radio.forEach((node) => { if(node.checked){ img_shape_value = node.value }})
+
+    console.log(ordering_value + '/' + price_value + '/' + img_shape_value);
+
+    const response = await fetch(
+        `${backend_base_url}/product/?category_name=${category_name}&price=${price_value}&image_shape=${img_shape_value}&ordering_value=${ordering_value}`,
+        {
+        headers:{
+            Accept: "application/json",
+            'content-type': "application/json"
+        },
+        method: 'GET',
+        // body: JSON.stringify(Data)
+    })
+    console.log('============================================', response)
+    
+    response_json = await response.json()
+    
+    if(response.status == 200) {
+        MainProductPutData(response_json)
+    } else {
+        alert('ERROR: ', response.status)
+    }
+}
+
+
+// 필터링
+async function getSearchResult() {
+    console.log("main.js - getSearchResult")
+    search_input = document.querySelector(".item-search")
+    search_input_value = search_input.value
+    console.log(search_input_value)  
+
+    let category_name;
+    if(localStorage.getItem('category_name')){
+        category_name = localStorage.getItem('category_name')
+    }else{
+        category_name = `${DEFAULT_CATEGORY}`
+    }
+
+    const response = await fetch(
+        `${backend_base_url}/product/${category_name}/${search_input_value}`,
+        {
+        headers:{
+            Accept: "application/json",
+            'content-type': "application/json"
+        },
+        method: 'GET',
+        // body: JSON.stringify(Data)
+    })
+    console.log('============================================', response)
+    
+    response_json = await response.json()
+    
+    if(response.status == 200) {
+        MainProductPutData(response_json)
+    } else {
+        alert('ERROR: ', response.status)
+    }
+}

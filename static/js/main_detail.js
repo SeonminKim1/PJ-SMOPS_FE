@@ -7,7 +7,7 @@ async function loadMainProductDetailPage(){
         product_id = localStorage.getItem('product_img_id')
     }
     console.log('main_detail.js - product_id1', product_id)
-    product_id = product_id.replace(`${main_product_img_id}`, '')
+    product_id = product_id.replace(MAIN_PROUCT_IMG_ID, '')
     product_id = parseInt(product_id)
     console.log('main_detail.js - product_id2', product_id)
     const response = await fetch(`${backend_base_url}/product/detail/${product_id}`,{
