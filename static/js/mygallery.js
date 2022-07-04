@@ -51,7 +51,7 @@ async function getMyGalleryList() {
             <img src="${img_src}" id=product_img_${mygallery.id} onclick="detail_modalOn(${mygallery.id})">
             <div class="box-text-mygallery">
                 <span class="title-mygallery">${mygallery.title}</span>
-                <p>${mygallery.description}</p>
+                <p>창작자 : ${mygallery.created_user}</p>
                 <span>가격 : ${mygallery.price}</span>
                 <span class="sell-status" onclick="status_modalOn(${mygallery.id})">${is_selling}</span>
             </div>
