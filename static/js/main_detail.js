@@ -80,7 +80,7 @@ function MainProductDetailPutData(product_one) {
     const history_btn = document.querySelector("#history_btn")
     console.log(history_btn)
     history_btn.innerHTML = `
-    <button class="btn-log" onclick="history_modalOn(${product_id})">히스토리 보기</button>
+    <button class="btn-log" onclick="history_modalOn(${product_id})">상세정보 보기</button>
 
     <!-- detail_Modal -->
     <div id="history_modal_${product_id}" class="modal-overlay">
@@ -97,41 +97,31 @@ function MainProductDetailPutData(product_one) {
                     <p>아티스트 : ${product_one['created_user']}</p>
                     <p>작품명 : ${product_one['title']}</p>
                     <p>생성일자 : ${created_dateString}</p>
+                    <p class="long-desc">작품설명 : ${product_one['description']}</p>
                     <h4>히스토리</h4>
                     <div id=history_box_${product_id}></div>
                 </div>
-            </div>
-            <hr>
-            <div class="modal-btn-box">
-                <button type="button" class="modal-btn" onclick="deleteProduct(${product_id})">작품 삭제하기</button>
             </div>
         </div>
     </div>
     `
 
-
-    // 로그 기록들 출력
     var updated_date = new Date(product_one['log'][0]['updated_date']);
     var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
-
     const history = document.getElementById("history_box_" + product_id)
-    // append를 이용하기 위해서 div 생성
     const history_item = document.createElement('p')
     history_item.innerHTML = `${log_updated_dateString} 에 ${product_one['log'][0].old_owner} 님이 ${product_one['log'][0].old_price} 원에 생성`
     history.append(history_item)
-    console.log(history)
 
-
+    // 로그 기록들 출력
     for (var i = 1; i < product_one['log'].length; i++) {
         var updated_date = new Date(product_one['log'][i]['updated_date']);
         var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
-
         const history = document.getElementById("history_box_" + product_id)
         // append를 이용하기 위해서 div 생성
         const history_item = document.createElement('p')
         history_item.innerHTML = `${log_updated_dateString} 에 ${product_one['log'][i].old_owner} 님이 ${product_one['log'][i].old_price} 원에 구매`
         history.append(history_item)
-        console.log(history)
     }
 
 
@@ -181,19 +171,21 @@ var detail_modal;
 function history_modalOn(input_id) {
     history_modal = document.getElementById("history_modal_" + input_id)
     history_modal.style.display = "flex"
-    console.log(detail_modal)
+    history_modal.style.top = window.pageYOffset + 'px';
+    document.querySelector('body').style.overflow = 'hidden'
 }
 
 // detail modal off
 function history_modalOff(input_id) {
     history_modal = document.getElementById("history_modal_" + input_id)
     history_modal.style.display = "none"
+    history_modal.style.top = window.pageYOffset + 'px';
+    document.querySelector('body').style.overflow = 'scroll'
 }
 
-// 모달창 바깥 클릭 시 모달창 닫히게
 window.addEventListener("click", e => {
     const evTarget = e.target
     if (evTarget.classList.contains("modal-overlay")) {
-        detail_modal.style.display = "none";
+        history_modal.style.display = "none";
     }
 })

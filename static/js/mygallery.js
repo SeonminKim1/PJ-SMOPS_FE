@@ -31,9 +31,9 @@ async function getMyGalleryList() {
             // 판매중 여부에 따라 출력문 결정
             var is_selling;
             if (mygallery.is_selling) {
-                is_selling = "판매중"
+                is_selling = "판매 중"
             } else {
-                is_selling = "소유중"
+                is_selling = "보유 중"
             }
 
             // 날짜 출력형태 정리
@@ -97,8 +97,8 @@ async function getMyGalleryList() {
                         <div class="status-modal-mygallery-info">
                             <div><label for="is_selling_${mygallery.id}">판매상태 :
                                 <select id="is_selling_${mygallery.id}" value="${mygallery.is_selling}">
-                                    <option value="1">판매 중</option>
-                                    <option value="0">소유 중</option>
+                                    <option value="1">판매로 등록</option>
+                                    <option value="0">보유로 전환</option>
                                 </select>
                             </label></div>
                             <div><label for="price_${mygallery.id}">가격 : <input id="price_${mygallery.id}" type="text" value="${mygallery.price}"></label></div>

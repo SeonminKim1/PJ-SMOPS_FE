@@ -61,6 +61,7 @@ a {
 
 .menu-nav {
     padding: 8px 15px;
+    cursor: pointer;
 }
 
 .menu-nav-user {
@@ -99,6 +100,7 @@ a {
 .category-nav {
     margin: 20px;
     padding: 2px 0;
+    cursor: pointer;
 }
 
 .category-nav:hover {

@@ -45,7 +45,7 @@ async function style_transfer(){
 // 이미지 미리보기
 function base_image_preview(input) {
     const base_div = document.querySelector("#base_img_preview")
-    base_div.innerHTML = `<img src="" id="result_base_file" width="100%" height="100%">`
+    base_div.innerHTML = `<img src="" id="result_base_file" class="base-img">`
 
     if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -59,7 +59,7 @@ function base_image_preview(input) {
 }
 function style_image_preview(input) {
     const style_div = document.querySelector("#style_img_preview")
-    style_div.innerHTML = `<img src="" id="result_style_file" width="100%" height="100%">`
+    style_div.innerHTML = `<img src="" id="result_style_file" class="style-img">`
 
     if (input.files && input.files[0]) {
       var reader = new FileReader();
