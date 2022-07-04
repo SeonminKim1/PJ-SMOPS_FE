@@ -1,8 +1,9 @@
 
+let product_id;
 async function loadMainProductDetailPage() {
     console.log("main_detail.js - loadMainProductDetailPage")
 
-    let product_id;
+    
     if (localStorage.getItem('product_img_id')) {
         product_id = localStorage.getItem('product_img_id')
     }
@@ -60,20 +61,69 @@ function MainProductDetailPutData(product_one) {
     description_detail.text = product_one['description']
 
     // json log data convert to logline
-    var logs = product_one['log']
-    var log_text = ''
+    // var product_one['log'] = product_one['log']
+    // var log_text = ''
 
-    for (var i = 0; i < logs.length; i++) {
-        var update_date = new Date(logs[i]['updated_date']);
-        var update_dateString = update_date.getFullYear() + '-' + (update_date.getMonth() + 1) + '-' + update_date.getDate();
-        if (i == 0) {
-            log_text = log_text + '아티스트:' + logs[i]['old_owner'] + '\n생성일자: ' + update_dateString + '\n\n'
-        } else {
-            log_text = log_text + '구매자:' + logs[i]['old_owner'] + '\n구매일자: ' + update_dateString + '\n구매금액:' + logs[i]['old_price'] + '원' + '\n\n'
-        }
+    // for (var i = 0; i < product_one['log'].length; i++) {
+    //     var update_date = new Date(product_one['log'][i]['updated_date']);
+    //     var update_dateString = update_date.getFullYear() + '-' + (update_date.getMonth() + 1) + '-' + update_date.getDate();
+    //     if (i == 0) {
+    //         log_text = log_text + '아티스트:' + product_one['log'][i]['old_owner'] + '\n생성일자: ' + update_dateString + '\n\n'
+    //     } else {
+    //         log_text = log_text + '구매자:' + product_one['log'][i]['old_owner'] + '\n구매일자: ' + update_dateString + '\n구매금액:' + product_one['log'][i]['old_price'] + '원' + '\n\n'
+    //     }
+    // }
+
+    // log_content_detail.innerText = log_text
+
+    
+    const history_btn = document.querySelector("#history_btn")
+    console.log(history_btn)
+    history_btn.innerHTML = `
+    <button class="btn-log" onclick="history_modalOn(${product_id})">히스토리 보기</button>
+
+    <!-- detail_Modal -->
+    <div id="history_modal_${product_id}" class="modal-overlay">
+        <div class="detail-modal-window">
+            <div class="modal-title">
+                <h3>작품 상세 정보</h3>
+            </div>
+            <div class="modal-close" onclick="history_modalOff(${product_id})">X</div>
+            <hr>
+            <div class="main-content">
+                <img src="${'https:/' + product_one['img_path']}">
+                <div class="modal-mygallery-info">
+                    <h4>기본 정보</h4>
+                    <p>아티스트 : ${product_one['created_user']}</p>
+                    <p>작품명 : ${product_one['title']}</p>
+                    <p>생성일자 : ${created_dateString}</p>
+                    <h4>히스토리</h4>
+                    <div id=history_box_${product_id}></div>
+                </div>
+            </div>
+            <hr>
+            <div class="modal-btn-box">
+                <button type="button" class="modal-btn" onclick="deleteProduct(${product_id})">작품 삭제하기</button>
+            </div>
+        </div>
+    </div>
+    `
+
+
+    // 로그 기록들 출력
+    for (var i = 0; i < product_one['log'].length; i++) {
+        var updated_date = new Date(product_one['log'][i]['updated_date']);
+        var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
+
+        const history = document.getElementById("history_box_" + product_id)
+        // append를 이용하기 위해서 div 생성
+        const history_item = document.createElement('p')
+        history_item.innerHTML = `${log_updated_dateString} 에 ${product_one['log'][i].old_owner} 님이 ${product_one['log'][i].old_price} 원에 구매`
+        history.append(history_item)
+        console.log(history)
     }
 
-    log_content_detail.innerText = log_text
+    
 }
 
 async function buy_product() {
@@ -112,3 +162,20 @@ async function buy_product() {
         confirm('구매가 취소 되었습니다.')
     }
 }
+
+
+// 히스토리 보기 모달 창 on/off
+var detail_modal;
+// detail modal on
+function history_modalOn(input_id) {
+    history_modal = document.getElementById("history_modal_" + input_id)
+    history_modal.style.display = "flex"
+    console.log(detail_modal)
+}
+
+// detail modal off
+function history_modalOff(input_id) {
+    history_modal = document.getElementById("history_modal_" + input_id)
+    history_modal.style.display = "none"
+}
+

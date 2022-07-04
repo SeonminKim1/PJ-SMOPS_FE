@@ -57,7 +57,13 @@ body {
     font-weight: 700;
 }
 
-.sell-status {
+.sell-status_false {
+    padding: 5px;
+    background-color: blueviolet;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.sell-status_true {
     padding: 5px;
     background-color: blue;
     color: whitesmoke;

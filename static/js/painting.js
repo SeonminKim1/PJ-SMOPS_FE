@@ -1,6 +1,7 @@
 var img_path;
 // style transfer 실행 후 결과 태그에 전달해서 미리보기
 async function style_transfer(){
+    // 작동 개시 시 PROCESS 화면에 출력되도록
     document.querySelector(".container-painting").style.display = "none"
     document.querySelector(".container-process").style.display = "block"
     
@@ -10,12 +11,14 @@ async function style_transfer(){
     formdata.append("content", document.querySelector("#base_img").files[0])
     formdata.append("style", document.querySelector("#style_img").files[0])
     
+    // 테스트
     var filename1 = document.querySelector("#base_img").files[0].name 
     var filename2 = document.querySelector("#style_img").files[0].name 
 
     var extension = filename1.split('.')[1] // .png
     var f_name = filename1.split('.')[0] + '_' + filename2.split('.')[0] + '.' + extension
 
+    // style transfer 작업
     const response = await fetch(`${backend_base_url}/ai/inference/`,{
         headers:{
             // Accept: "application/formdata",
@@ -32,6 +35,7 @@ async function style_transfer(){
       result_file.src = objectURL;
     })
 
+    // 결과 , 등록 화면 출력
     document.querySelector(".container-process").style.display = "none"
     document.querySelector(".container-result").style.display = "block"
         
@@ -68,6 +72,7 @@ function style_image_preview(input) {
     }
 }
 
+// 이미지 업로드 (S3)
 async function product_upload(){
     const formdata = new FormData();
     
