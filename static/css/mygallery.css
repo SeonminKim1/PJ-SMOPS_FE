@@ -38,7 +38,12 @@ body {
     height: 256px;
     margin: auto;
     object-fit: cover;
+    object-position: center;
     cursor: pointer;
+}
+
+.item-mygallery:hover > img {
+    filter: brightness(70%);
 }
 
 .box-text-mygallery {
@@ -63,6 +68,7 @@ body {
     color: whitesmoke;
     cursor: pointer;
 }
+
 .sell-status_true {
     padding: 5px;
     background-color: blue;

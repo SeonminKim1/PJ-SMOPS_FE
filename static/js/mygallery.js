@@ -73,7 +73,8 @@ async function getMyGalleryList() {
                             <p>생성일자 : ${created_dateString}</p>
                             <p class="long-desc">작품설명 : ${mygallery.description}</p>
                             <h4>히스토리</h4>
-                            <div id=history_box_${mygallery.id} class="history-list"></div>
+                            <div id=history_box_${mygallery.id} class="history-list">
+                            </div>
                         </div>
                     </div>
                     <hr>
@@ -116,8 +117,15 @@ async function getMyGalleryList() {
             list_box.append(item_mygallery)
             console.log(item_mygallery)
 
+            var updated_date = new Date(mygallery.log[0]['updated_date']);
+            var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
+            const history = document.getElementById("history_box_" + mygallery.id)
+            const history_item = document.createElement('p')
+            history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[0].old_owner} 님이 ${mygallery.log[0].old_price} 원에 생성`
+            history.append(history_item)
+
             // 로그 기록들 출력
-            for (var i = 0; i < mygallery.log.length; i++) {
+            for (var i = 1; i < mygallery.log.length; i++) {
                 var updated_date = new Date(mygallery.log[i]['updated_date']);
                 var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
 
@@ -126,7 +134,6 @@ async function getMyGalleryList() {
                 const history_item = document.createElement('p')
                 history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[i].old_owner} 님이 ${mygallery.log[i].old_price} 원에 구매`
                 history.append(history_item)
-                console.log(history)
             }
 
 

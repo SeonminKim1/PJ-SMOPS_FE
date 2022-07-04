@@ -3,7 +3,7 @@ let product_id;
 async function loadMainProductDetailPage() {
     console.log("main_detail.js - loadMainProductDetailPage")
 
-    
+
     if (localStorage.getItem('product_img_id')) {
         product_id = localStorage.getItem('product_img_id')
     }
@@ -76,7 +76,7 @@ function MainProductDetailPutData(product_one) {
 
     // log_content_detail.innerText = log_text
 
-    
+
     const history_btn = document.querySelector("#history_btn")
     console.log(history_btn)
     history_btn.innerHTML = `
@@ -111,7 +111,18 @@ function MainProductDetailPutData(product_one) {
 
 
     // 로그 기록들 출력
-    for (var i = 0; i < product_one['log'].length; i++) {
+    var updated_date = new Date(product_one['log'][0]['updated_date']);
+    var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
+
+    const history = document.getElementById("history_box_" + product_id)
+    // append를 이용하기 위해서 div 생성
+    const history_item = document.createElement('p')
+    history_item.innerHTML = `${log_updated_dateString} 에 ${product_one['log'][0].old_owner} 님이 ${product_one['log'][0].old_price} 원에 생성`
+    history.append(history_item)
+    console.log(history)
+
+
+    for (var i = 1; i < product_one['log'].length; i++) {
         var updated_date = new Date(product_one['log'][i]['updated_date']);
         var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
 
@@ -123,7 +134,7 @@ function MainProductDetailPutData(product_one) {
         console.log(history)
     }
 
-    
+
 }
 
 async function buy_product() {
@@ -179,3 +190,10 @@ function history_modalOff(input_id) {
     history_modal.style.display = "none"
 }
 
+// 모달창 바깥 클릭 시 모달창 닫히게
+window.addEventListener("click", e => {
+    const evTarget = e.target
+    if (evTarget.classList.contains("modal-overlay")) {
+        detail_modal.style.display = "none";
+    }
+})
