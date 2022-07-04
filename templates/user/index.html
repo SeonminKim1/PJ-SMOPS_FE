@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/51395e4b23.js" crossorigin="anonymous"></script>
 
     <!-- CSS Import -->
-    <link rel="stylesheet" type="text/css" href="/static/css/join.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
 
     <!-- Javascript Import -->
     <script src="../../static/js/_base.js"></script>
@@ -23,30 +23,25 @@
 </head>
 
 <body>
-<section class="background-join">
-    <div class="container-join">
-        <div class="wrap-join">
-            <div class="box-title-join">
+<section class="background-init">
+    <div class="container-init">
+        <div class="wrap-init">
+            <div class="box-title-init">
                 <h1>SMOPS</h1>
                 <span>Selling My Oil Painting Service</span>
             </div>
-            <div class="wrap-input-join">
-                <li><input id="input-id-join" type="email" size=40 placeholder="E-mail" title="아이디"></li>
-                <li><input id="input-fullname-join" type="text" size=40 placeholder="Name" title="이름"></li>
-                <li><input id="input-password-join" type="password" size=40 maxlength="16" placeholder="Password"
+            <div class="wrap-input-init">
+                <li><input id="input-id-init" type="text" size=40 placeholder="E-mail" title="아이디"></li>
+                <li><input id="input-password-init" type="password" size=40 maxlength="16" placeholder="Password"
                            title="비밀번호"></li>
-                <li><input type="password" id="input-password-confirm" size="40" maxlength="16"
-                           placeholder="Password Confirm"></li>
-            </div>
-            <div class="box-btn-join">
                 <li>
-                    <button type="submit" onclick="join()" class="btn-join-join">
-                        회원가입
+                    <button type="submit" onclick="login()" class="btn-login-init">
+                        로그인
                     </button>
                 </li>
                 <li>
-                    <button class="btn-login-join" onclick="location.href='index.html'">
-                        <span>로그인</span>
+                    <button class="btn-join-init" onclick="location.href='join.html'">
+                        <span>회원가입</span>
                     </button>
                 </li>
             </div>
