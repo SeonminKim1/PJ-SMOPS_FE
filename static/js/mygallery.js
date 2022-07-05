@@ -33,7 +33,7 @@ async function getMyGalleryList() {
             if (mygallery.is_selling) {
                 is_selling = "판매 중"
             } else {
-                is_selling = "보유 중"
+                is_selling = "보유 작품"
             }
 
             // 날짜 출력형태 정리
@@ -71,7 +71,7 @@ async function getMyGalleryList() {
                             <p>아티스트 : ${mygallery.created_user}</p>
                             <p>작품명 : ${mygallery.title}</p>
                             <p>생성일자 : ${created_dateString}</p>
-                            <p class="long-desc">작품설명 : ${mygallery.description}</p>
+                            <p>작품설명 : <p class="long-desc">${mygallery.description}</p></p>
                             <h4>히스토리</h4>
                             <div id=history_box_${mygallery.id} class="history-list">
                             </div>
