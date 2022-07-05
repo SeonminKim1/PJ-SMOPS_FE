@@ -132,10 +132,11 @@ a {
 
 @media screen and (max-width: 768px) {
     .container-nav {
-        height: 60px;
+        height: 40px;
         flex-direction: column;
         align-items: flex-start;
         padding: 10px;
+        border-bottom: 1px solid black;
     }
 
     .box-ai-nav {

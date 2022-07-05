@@ -97,14 +97,14 @@ async function getMyGalleryList() {
                     <div class="status-main-content">
                         <img src="${img_src}">
                         <div class="status-modal-mygallery-info">
-                            <div><label for="is_selling_${mygallery.id}">판매상태 
+                            <div><label for="is_selling_${mygallery.id}">판매상태 :
                                 <select id="is_selling_${mygallery.id}" value="${mygallery.is_selling}">
                                     <option value="1">판매로 등록</option>
                                     <option value="0">보유로 전환</option>
                                 </select>
                             </label></div>
-                            <div><label for="price_${mygallery.id}">가격<input class="input-price" id="price_${mygallery.id}" type="text" value="${mygallery.price.toLocaleString()}"></label></div>
-                            <div><label for="description_${mygallery.id}">내용<input class="input-text" id="description_${mygallery.id}" type="text" value="${mygallery.description}"></label></div>
+                            <div><label for="price_${mygallery.id}">가격 : <input id="price_${mygallery.id}" type="text" value="${mygallery.price.toLocaleString()}"></label></div>
+                            <div><label for="description_${mygallery.id}">내용 : <input id="description_${mygallery.id}" type="text" value="${mygallery.description}"></label></div>
                         </div>
                     </div>
                     <hr>
@@ -170,7 +170,7 @@ async function updateProduct(product_id) {
 
     const Data = {
         description: document.getElementById("description_" + product_id).value,
-        price: parseInt(String(document.getElementById("price_" + product_id).value).replace(',' , "")),
+        price: document.getElementById("price_" + product_id).value,
         is_selling: document.getElementById("is_selling_" + product_id).value
     }
 
