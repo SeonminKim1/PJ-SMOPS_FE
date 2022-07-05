@@ -1,0 +1,184 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 30px;
+    border-bottom: 1px solid black;
+}
+
+.box-ai-nav {
+    padding: 8px 12px;
+}
+
+.box-ai-nav:hover {
+    background-color: blueviolet;
+    font-weight: 700;
+}
+
+.painting-menu-nav:hover {
+    color: white;
+}
+
+.painting-menu-nav {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.selected-box-ai-nav {
+    padding: 8px 12px;
+    background-color: blueviolet;
+    font-weight: 700;
+}
+
+.box-logo-nav {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+.logo-nav {
+    font-size: 4rem;
+    margin-left: 30px;
+}
+
+.box-menu-nav {
+    display: flex;
+    padding-left: 0;
+}
+
+.box-menu-nav>li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-nav {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.my-menu-nav {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.selected-menu-nav {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+}
+
+.menu-nav-user {
+    padding: 8px 15px;
+}
+
+
+.menu-nav:hover {
+    background-color: blue;
+    color: white;
+}
+
+.my-menu-nav:hover {
+    background-color: blue;
+    color: white;
+}
+
+.bar-toggle-nav {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.wrap-category-nav {
+    border-bottom: 1px solid black;
+}
+
+.box-category-nav {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+
+
+.box-category-nav>li {
+    list-style: none;
+}
+
+.category-nav {
+    margin: 20px;
+    padding: 2px 0;
+    cursor: pointer;
+}
+
+.category-nav:hover {
+    color: blueviolet;
+}
+
+@media screen and (max-width: 768px) {
+    .container-nav {
+        height: 40px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        border-bottom: 1px solid black;
+    }
+
+    .box-ai-nav {
+        position: absolute;
+        top: 2%;
+        left: 40%;
+        padding: 2px 10px;
+    }
+
+    .painting-menu-nav {
+        font-size: 1.2rem;
+    }
+
+    .box-logo-nav {
+        position: absolute;
+        right: 100%;
+    }
+
+    .logo-nav {
+        position: absolute;
+        font-size: 2rem;
+    }
+
+    .box-menu-nav {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .bar-toggle-nav {
+        display: block;
+        padding-top: 5px;
+    }
+
+    .box-menu-nav.active {
+        display: flex;
+        width: 100%;
+        margin-top: 60px;
+    }
+
+    .category-active {
+        display: none;
+    }
+}

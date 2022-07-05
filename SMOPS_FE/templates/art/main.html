@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMOPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;500;900&display=swap"
+            rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/51395e4b23.js" crossorigin="anonymous"></script>
+
+    <!-- CSS Import -->
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/nav.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- JS Import -->
+    <script src="/static/js/_base.js"></script>
+    <script src="/static/js/auth.js"></script>
+</head>
+
+<body onLoad="loadMainProductPage('인물화')">
+    <nav id="bar-nav">
+        <script>$("#bar-nav").load( "/templates/nav.html" );</script>
+    </nav>
+    <section>
+        <div class="container-main">
+            <!-- Menu - (filter, search bar) -->
+            <div class="wrap-menu">
+                <div class="box-filter">
+                    <!-- sgv icon -->
+                    <a href="#" id="filter_id" class="filter-active">FILTER</a>
+                </div>
+                <div class="box-search">
+                    <input type="search" class="item-search" name="q" placeholder="검색">
+                    <i class="fa-solid fa-magnifying-glass" onclick = "getSearchResult()"></i>
+                </div>
+            </div>
+            <!-- Filtering -->
+            <div class="wrap-filter-category">
+                <div>
+                    <span>정렬</span>
+                    <input type='radio' class = 'radio-btn' name='ordering' id='created_date' value="latest_date"/>
+                    <label for='created_date'>최신순</label>
+                    <input type='radio' class = 'radio-btn' name='ordering' id='price_up' value="ascending_price"/>
+                    <label for='price_up' />낮은가격순</label>
+                    <input type='radio' class = 'radio-btn' name='ordering' id='price_down' value="descending_price"/>
+                    <label for='price_down' />높은가격순</label>
+                </div>
+
+                <div>
+                    <span>가격</span>
+                    <input type='radio' class = 'radio-btn' name='price' id='from_0_to_50000' value="0~50,000원"/>
+                    <label for='from_0_to_50000' />0~50,000원</label>
+                    <input type='radio' class = 'radio-btn' name='price' id='from_50000_to_100000' value="50,000~100,000원"/>
+                    <label for='from_50000_to_100000' />50,000~100,000원</label>
+                    <input type='radio' class = 'radio-btn' name='price' id='from_100000_to_500000' value="100,000~500,000원"/>
+                    <label for='from_100000_to_500000' />100,000~500,000원</label>
+                    <input type='radio' class = 'radio-btn' name='price' id='from_500000_to_infinite' value="500,000~infinite원"/>
+                    <label for='from_500000_to_infinite' />500,000원 이상</label>
+                </div>
+                <div>
+                    <span>그림형태</span>
+                    <input type='radio' class = 'radio-btn' name='img_shape' id='square_img' value="정방형"/>
+                    <label for='square_img' />정방형</label>
+                    <input type='radio' class = 'radio-btn' name='img_shape' id='horizontal_img'value="가로형" />
+                    <label for='horizontal_img' />가로형</label>
+                    <input type='radio' class = 'radio-btn' name='img_shape' id='vertical_img' value="세로형"/>
+                    <label for='vertical_img' />세로형</label>
+                </div>
+                <div class="filter-box-search filter-main">
+                    <button class="filter-btn-search" onclick="getFilterResult()">적용하기</button>
+                    <button class="filter-btn-initialize" onclick="getFilterInitialize()">초기화</button>
+                </div>
+            </div>
+
+            <!-- Product Main -->
+            <div class="wrap-main">
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<!-- Javascript Import -->
+<script src="/static/js/nav.js"></script>
+<script src="/static/js/main.js"></script>
+
+</html>

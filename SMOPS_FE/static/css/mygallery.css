@@ -1,0 +1,243 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.wrap-menu {
+    width: 80%;
+    padding: 1rem;
+    margin: 10px auto;
+}
+
+.wrap-menu>span {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.wrap-mygallery {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.item-mygallery>img {
+    background-color: white;
+    display: block;
+    width: 256px;
+    height: 256px;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+.item-mygallery:hover > img {
+    filter: brightness(70%);
+}
+
+.box-text-mygallery {
+    margin: 20px 0;
+}
+
+.box-text-mygallery>span,
+.box-text-mygallery>p {
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin: 20px 40px
+}
+
+.title-mygallery {
+    font-weight: 700;
+}
+
+.sell-status_false {
+    padding: 5px;
+    background-color: blueviolet;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.sell-status_true {
+    padding: 5px;
+    background-color: blue;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+/* detail-modal */
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-modal-window {
+    width: 80%;
+    height: 80%;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px 1px rgba(051, 051, 051, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2%;
+}
+
+.modal-title {
+    padding-left: 10px;
+    display: inline;
+    color: black;
+}
+
+.modal-title h3 {
+    display: inline;
+}
+
+.modal-close {
+    display: inline;
+    float: right;
+    padding-right: 10px;
+    cursor: pointer;
+    color: black;
+}
+
+.main-content {
+    width: 100%;
+    height: 80%;
+    margin: 1% auto;
+    display: flex;
+}
+
+.main-content img {
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 3px;
+}
+
+.modal-mygallery-info {
+    width: 50%;
+    height: 100%;
+    font-size: 16px;
+    padding: 0 0 0 5%;
+}
+
+.modal-mygallery-info > p {
+    margin: 5px auto;
+}
+
+.long-desc {
+    width: 100%;
+    height: 12%;
+    overflow-y: auto;
+}
+
+.history-list {
+    width: 100%;
+    height: 30%;
+    overflow-y: auto;
+}
+
+.history-list > p {
+    margin: 5px auto;
+}
+
+.modal-btn-box {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.modal-btn {
+    width: 200px;
+    height: 40px;
+    background-color: rgb(200, 200, 200, 0.6);
+    color: rgb(43, 43, 43);
+    border: 0;
+    border-radius: 5px;
+}
+
+.modal-btn:hover {
+    font-weight: 600;
+}
+
+/* status-modal */
+.status-modal-window {
+    width: 40%;
+    height: 80%;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px 1px rgba(051, 051, 051, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2%;
+}
+
+.status-main-content {
+    width: 100%;
+    height: 80%;
+    margin: 1% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-main-content img {
+    width: 100%;
+    height: 60%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 3px;
+}
+
+.status-modal-mygallery-info {
+    width: 100%;
+    height: 30%;
+    font-size: 20px;
+    padding: 2%;
+}
+
+.status-modal-mygallery-info input {
+    width: 80%;
+}
+
+.status-modal-mygallery-info>div {
+    margin-top: 4%;
+}
+
+.status-modal-btn-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.status-modal-btn {
+    width: 200px;
+    height: 40px;
+    background-color: rgb(200, 200, 200, 0.6);
+    color: rgb(43, 43, 43);
+    border: 0;
+    border-radius: 5px;
+}
+
+.status-modal-btn:hover {
+    font-weight: 600;
+}

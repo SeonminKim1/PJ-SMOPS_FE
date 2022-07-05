@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMOPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;500;900&display=swap"
+            rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/51395e4b23.js" crossorigin="anonymous"></script>
+
+    <!-- CSS Import -->
+    <link rel="stylesheet" type="text/css" href="/static/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main_detail.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- JS Import -->
+    <script src="/static/js/_base.js"></script>
+    <script src="/static/js/auth.js"></script>
+
+</head>
+<body onLoad="loadMainProductDetailPage()">
+<nav id="bar-nav">
+    <script>$("#bar-nav").load("/templates/nav.html");</script>
+</nav>
+<section>
+    <div class="container-main-detail">
+        <div class="wrap-main-detail">
+            <div class="box-img-main-detail">
+                <img class="img-main-detail" src="/static/img/item.png">
+            </div>
+            <div class="wrap-text-main-detail">
+                <div class="box-text-main-detail">
+                    <div class="box-title-main-detail">
+                        <span class="title-detail">my panting title</span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail category">카테고리  </label><span
+                            class="main-detail category-detail"></span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail img-shape">형태  </label><span
+                            class="main-detail img-shape-detail"></span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail create-user">원작자  </label><span
+                            class="main-detail create-user-detail"></span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail selling-user">판매자  </label><span
+                            class="main-detail selling-user-detail"></span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail update-date">등록일  </label><span
+                            class="main-detail update-date-detail"></span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail price">가격  </label><span class="main-detail price-detail"></span>
+                    </div>
+                </div>
+                <div class="box-btn">
+                    <div class="line-text-main-detail-center" id="history_btn">
+                        <p class="description-detail"></p>
+                    </div>
+                    <div class="line-text-main-detail-center">
+                        <button class="btn-buy" onclick="buy_product()">구매하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+
+<!-- Javascript Import -->
+<script src="/static/js/nav.js"></script>
+<!--<script src="/static/js/main.js"></script>-->
+<script src="/static/js/main_detail.js"></script>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMOPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;500;900&display=swap"
+            rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/51395e4b23.js" crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- CSS Import -->
+    <link rel="stylesheet" type="text/css" href="/static/css/painting.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/nav.css">
+    
+    <!-- JS Import -->
+    <script src="/static/js/_base.js"></script>
+    <script src="/static/js/nav.js"></script>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/painting.js"></script>
+
+</head>
+<body>
+<nav id="bar-nav">
+    <script>$("#bar-nav").load( "/templates/nav.html" );</script>
+</nav>
+<section id="painting" class="container-painting">
+    <form method="post" enctype="multipart/form-data">
+        <div class="wrap-content-painting">
+            <div class="box-base box-img">
+                <div id="base_img_preview">
+                    <span>그림 이미지를 넣어주세요</span>
+                </div>
+                <label class="label-img" for="base_img">Click!</label>
+                <input type="file" id="base_img" name="base_img"
+                accept=".jpg, .jpeg, .png" onchange="base_image_preview(this)">
+            </div>
+            <div class="box-style box-img">
+                <div id="style_img_preview">
+                    <span>그림 스타일을 넣어주세요</span>
+                </div>
+                <label class="label-img" for="style_img">Click!</label>
+                <input type="file" id="style_img" name="style_img"
+                       accept=".jpg, .jpeg, .png" onchange="style_image_preview(this)">
+            </div>
+        </div>
+        <div class="box-btn-painting">
+            <button type="button" class="btn-painting" onclick="style_transfer()">그림 제작하기!</button>
+        </div>
+    </form>
+</section>
+
+<!-- 추론 페이지 -->
+<section id="process" class="container-process">
+    <div class="box-process">
+        <span class="text-process">PROCESS</span>
+    </div>
+</section>
+
+<!-- 결과 페이지 -->
+<section class="container-result">
+    <form method="post" enctype="multipart/form-data">
+        <div class="wrap-content-result">
+            <div class="box-result box-img-result">
+                <img src="" id="result_file" class="result-img">
+            </div>
+            <div class="box-result box-text-result">
+                <div class="box-text">
+                    <div class="text-title">
+                        제목 : <input id="title" type="text" placeholder="제목">
+                    </div>
+                    <div class="text-price">
+                        가격 : <input id="price" type="text" placeholder="가격">
+                    </div>
+                    <div class="text-category">
+                        <span>카테고리</span>
+                        <div class="wrap-radio radio-top">
+                            <div class="box-radio">
+                                <input class="category" type="radio" name="painting-category" value="1"> 인물화
+                                <input class="category" type="radio" name="painting-category" value="2"> 풍경화
+                            </div>
+                            <div class="box-radio radio-bottom">
+                                <input class="category" type="radio" name="painting-category" value="3"> 정물화
+                                <input class="category" type="radio" name="painting-category" value="4"> 동물화
+                            </div>
+                        <div class="wrap-radio radio-top">
+                            <div class="box-radio">
+                                <input class="shape" type="radio" name="painting-shape" value="1"> 정방형
+                                <input class="shape" type="radio" name="painting-shape" value="2"> 가로형
+                                <input class="shape" type="radio" name="painting-shape" value="3"> 세로형
+                            </div>
+                            <div class="text-description">
+                                <input id="description" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-btn-result">
+                    <input class="btn-result" type="button" onclick="product_upload()" value="등록하기">
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+
+</body>
+</html>
