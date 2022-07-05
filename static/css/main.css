@@ -41,6 +41,12 @@ body {
     font-size: 1.5rem;
 }
 
+.filter-active:hover {
+    padding: 4px 6px;
+    background-color: black;
+    color: white;
+}
+
 .wrap-main {
     display: flex;
     align-items: center;
