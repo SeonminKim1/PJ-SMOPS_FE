@@ -76,33 +76,33 @@
             <div class="box-result box-text-result">
                 <div class="box-text">
                     <div class="text-title">
-                        제목 : <input id="title" type="text" placeholder="제목">
+                        <input id="title" type="text" placeholder="제목" onfocus="this.placeholder=''" onblur="this.placeholder='제목'">
                     </div>
                     <div class="text-price">
-                        가격 : <input id="price" type="text" placeholder="가격">
+                        <input id="price" type="text" placeholder="가격" onfocus="this.placeholder=''" onblur="this.placeholder='가격'">
+                    </div>
+                    <div class="text-description">
+                        <input id="description" type="text" placeholder="작품 설명" onfocus="this.placeholder=''" onblur="this.placeholder='작품 설명'">
                     </div>
                     <div class="text-category">
-                        <span>카테고리</span>
-                        <div class="wrap-radio radio-top">
-                            <div class="box-radio">
-                                <input class="category" type="radio" name="painting-category" value="1"> 인물화
-                                <input class="category" type="radio" name="painting-category" value="2"> 풍경화
+                        <div class="wrap-radio">
+                            <div class="box-radio"><span>카테고리</span>
+                                <input class="category" type="radio" name="painting-category" id="painting-category1" value="1" checked><label for="painting-category1">인물화</label>
+                                <input class="category" type="radio" name="painting-category" id="painting-category2" value="2"><label for="painting-category2">풍경화</label>
+                                <input class="category" type="radio" name="painting-category" id="painting-category3" value="3"><label for="painting-category3">정물화</label>
+                                <input class="category" type="radio" name="painting-category" id="painting-category4" value="4"><label for="painting-category4">동물화</label>
                             </div>
-                            <div class="box-radio radio-bottom">
-                                <input class="category" type="radio" name="painting-category" value="3"> 정물화
-                                <input class="category" type="radio" name="painting-category" value="4"> 동물화
-                            </div>
-                        <div class="wrap-radio radio-top">
-                            <div class="box-radio">
-                                <input class="shape" type="radio" name="painting-shape" value="1"> 정방형
-                                <input class="shape" type="radio" name="painting-shape" value="2"> 가로형
-                                <input class="shape" type="radio" name="painting-shape" value="3"> 세로형
-                            </div>
-                            <div class="text-description">
-                                <input id="description" type="text">
+                        </div>
+                        <div class="wrap-radio">
+                            <div class="box-radio"><span>작품형태</span>
+                                <input class="shape" type="radio" name="painting-shape" id="painting-shape1" value="1" checked><label for="painting-shape1">정방형</label>
+                                <input class="shape" type="radio" name="painting-shape" id="painting-shape2" value="2"><label for="painting-shape2">가로형</label>
+                                <input class="shape" type="radio" name="painting-shape" id="painting-shape3" value="3"><label for="painting-shape3">세로형</label>
                             </div>
                         </div>
                     </div>
+                    
+
                 </div>
                 <div class="box-btn-result">
                     <input class="btn-result" type="button" onclick="product_upload()" value="등록하기">

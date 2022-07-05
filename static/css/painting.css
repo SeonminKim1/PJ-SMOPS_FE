@@ -13,7 +13,7 @@ body {
 
 /* ai 페이지  */
 .container-painting {
-    /*display: none;*/
+    /* display: none; */
     margin-top: 3%;
 }
 
@@ -129,7 +129,7 @@ input[type="file"] {
     display: flex;
     flex-direction: column;
     width: 30%;
-    height: 400px;
+    height: 500px;
     padding: 3%;
     text-align: center;
     font-size: 2rem;
@@ -143,12 +143,12 @@ input[type="file"] {
 }
 
 .box-img-result {
-    width: 40%;
+    width: 45%;
     margin-left: 5%;
 }
 
 .box-text-result {
-    width: 40%;
+    width: 45%;
     margin-right: 5%;
 }
 
@@ -159,27 +159,39 @@ input[type="file"] {
     border: none;
     outline: none;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.text-description > input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1.2rem;
+    vertical-align: middle;
 }
 
 .text-title,
 .text-price,
-.wrap-radio,
+.text-description,
 .btn-result {
     margin-bottom: 2rem;
     padding: 10px;
 }
 
 .text-title,
-.text-price {
+.text-price,
+.text-description {
     text-indent: 5px;
 }
 
 .text-title,
 .text-price,
 .text-category,
+.text-description,
 .text-title > input,
-.text-price > input {
+.text-price > input,
+.text-description > input {
     background-color: lightgray;
 }
 
@@ -191,13 +203,40 @@ input[type="file"] {
     font-size: 1rem;
 }
 
-.text-category > span {
-    margin: 10px 0;
+.box-radio {
+    margin: 2% 0;
 }
 
-.box-radio {
-    padding: 10px;
-    margin-top: 10px;
+.box-radio > span {
+    margin: 2% 5% 0 0;
+    font-size: 1.2rem;
+}
+
+.box-radio input[type=radio]{
+    display: none;
+}
+
+.box-radio input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 24px;
+    width: 80px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size: 13px;
+    margin-left: 1%;
+}
+
+.box-radio input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+}
+
+.box-radio input[type=radio]:checked+label{
+    background-color: #333;
+    color: #fff;
 }
 
 .box-btn-result {

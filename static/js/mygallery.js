@@ -116,7 +116,7 @@ async function getMyGalleryList() {
             `
 
             // 상품리스트에 출력하기위해 만든 div append
-            list_box.append(item_mygallery)
+            list_box.prepend(item_mygallery)
 
             var updated_date = new Date(mygallery.log[0]['updated_date']);
             var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
