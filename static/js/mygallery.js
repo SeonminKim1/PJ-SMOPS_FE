@@ -167,12 +167,33 @@ async function deleteProduct(product_id) {
 }
 // modal - 상품 수정
 async function updateProduct(product_id) {
+    const description = document.getElementById("description_" + product_id).value
+    const price = document.getElementById("price_" + product_id).value
 
-    const Data = {
-        description: document.getElementById("description_" + product_id).value,
-        price: parseInt(String(document.getElementById("price_" + product_id).value).replace(',' , "")),
-        is_selling: document.getElementById("is_selling_" + product_id).value
+    var Data;
+    if (description == "" && price == "") {
+        Data = {
+            is_selling: document.getElementById("is_selling_" + product_id).value,
+        }
+    } else if (price == "") {
+        Data = {
+            description: description,
+            is_selling: document.getElementById("is_selling_" + product_id).value,
+        }
+    } else if (description == "") {
+        Data = {
+            price: parseInt(String(price.replace(',', ""))),
+            is_selling: document.getElementById("is_selling_" + product_id).value,
+        }
+    } else {
+        Data = {
+            description: description,
+            price: parseInt(String(price.replace(',', ""))),
+            is_selling: document.getElementById("is_selling_" + product_id).value,
+        }
     }
+
+
 
     const response = await fetch(`${backend_base_url}/mygallery/${product_id}`, {
         headers: {
