@@ -151,13 +151,13 @@ a {
 
     .box-logo-nav {
         position: absolute;
-        right: 100%;
+        right: 60%;
     }
 
     .logo-nav {
         position: absolute;
         font-size: 2rem;
-    }
+    } 
 
     .box-menu-nav {
         display: none;
