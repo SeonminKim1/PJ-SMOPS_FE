@@ -170,7 +170,7 @@ async function updateProduct(product_id) {
 
     const Data = {
         description: document.getElementById("description_" + product_id).value,
-        price: document.getElementById("price_" + product_id).value,
+        price: parseInt(String(document.getElementById("price_" + product_id).value).replace(',' , "")),
         is_selling: document.getElementById("is_selling_" + product_id).value
     }
 
