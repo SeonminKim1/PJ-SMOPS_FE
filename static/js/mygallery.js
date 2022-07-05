@@ -185,8 +185,6 @@ async function updateProduct(product_id) {
     })
     alert("수정이 완료되었습니다.")
     window.location.reload()
-
-
 }
 
 var detail_modal;
@@ -237,4 +235,10 @@ window.addEventListener("click", e => {
     if (evTarget.classList.contains("modal-overlay")) {
         status_modal.style.display = "none";
     }
+})
+
+
+// 메뉴 선택시 선택됨 표시
+window.addEventListener('load', function () {
+    document.querySelector(".my-menu-nav").className = "selected-menu-nav";
 })
