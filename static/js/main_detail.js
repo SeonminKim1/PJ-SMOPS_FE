@@ -43,7 +43,6 @@ function MainProductDetailPutData(product_one) {
     const update_date_detail = document.querySelector('.update-date-detail')
     const price_detail = document.querySelector('.price-detail')
     const description_detail = document.querySelector('.description-detail')
-    const log_content_detail = document.querySelector('.log-content-detail')
 
     // json date data convert to 2022-06-29
     var created_date = new Date(product_one['created_date']);
