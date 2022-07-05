@@ -3,6 +3,7 @@ var img_path;
 async function style_transfer() {
   // 작동 개시 시 PROCESS 화면에 출력되도록
   document.querySelector(".container-painting").style.display = "none"
+  document.querySelector('nav').style.display = "none"
   document.querySelector(".container-process").style.display = "block"
 
   result_file = document.getElementById("result_file")
@@ -36,6 +37,7 @@ async function style_transfer() {
     })
 
   // 결과 , 등록 화면 출력
+  document.querySelector('nav').style.display = "block"
   document.querySelector(".container-process").style.display = "none"
   document.querySelector(".container-result").style.display = "block"
 
