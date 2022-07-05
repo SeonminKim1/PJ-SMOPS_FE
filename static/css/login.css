@@ -23,6 +23,16 @@ body {
 /*    background-size: cover;*/
 /*}*/
 
+.background-img-login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(/static/img/background-img.jpg);
+    background-size: cover; 
+}
+
 .container-init {
     position: absolute;
     left: 50%;
