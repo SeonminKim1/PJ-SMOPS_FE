@@ -74,11 +74,28 @@ function style_image_preview(input) {
 
 // 이미지 업로드 (S3)
 async function product_upload(){
+
+    // 이미지와 함께 저장하기 위해서 FormData 클래스 사용
     const formdata = new FormData();
     
     formdata.append("img_path", img_path)
-    formdata.append("category", document.querySelector(".category").value)
-    formdata.append("img_shape", document.querySelector(".shape").value)
+
+    // 라디오 버튼 중 선택된 항목의 value 가져오기
+    categoryNodeList = document.getElementsByName('painting-category');
+    shapeNodeList = document.getElementsByName('painting-shape');
+    categoryNodeList.forEach((node) => {
+      if(node.checked)  {
+        formdata.append("category", node.value)
+        console.log(node.value)
+      }
+    })
+    shapeNodeList.forEach((node) => {
+      if(node.checked)  {
+        formdata.append("img_shape", node.value)
+        console.log(node.value)
+      }
+    })
+
     formdata.append("title", document.querySelector("#title").value)
     formdata.append("description", document.querySelector("#description").value)
     formdata.append("price", document.querySelector("#price").value)
