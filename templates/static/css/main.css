@@ -1,0 +1,175 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.wrap-menu {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 10px auto;
+    font-size: 1.2rem;
+}
+
+.box-filter > span {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.box-search > input {
+    width: 240px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+    text-indent: 10px;
+}
+
+.filter-active {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.wrap-main {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.item-main {
+    width: 23%;
+    height: 33%;
+    margin: 0 2% 3% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-main:hover > img {
+    filter: brightness(70%);
+}
+
+.item-img {
+    width: 100%;
+    height: 256px;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+.box-text-main {
+    margin: 20px 0;
+}
+
+.box-text-main > span,
+.box-text-main > p {
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.title-main {
+    font-weight: 700;
+}
+
+.description-main {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* 필터 */
+.wrap-filter-category {
+    display: none;
+}
+
+.wrap-filter-category.active {
+    display: block;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.filter-main {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.filter-main > span {
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+
+.filter-main > li {
+    list-style: none;
+}
+
+.filter-content-btn,
+.filter-btn-search {
+    all: unset;
+    padding: 8px 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+li > button:hover {
+    background-color: lightgray;
+}
+
+.filter-btn-search {
+    font-size: 1.2rem;
+}
+
+.filter-btn-search:hover {
+    background-color: slategray;
+    color: whitesmoke;
+}
+
+@media screen and (max-width: 768px) {
+    .wrap-main {
+        display: block;
+    }
+
+    .wrap-main {
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    .item-main {
+        width: 80%;
+        margin: 0 auto 40px;
+    }
+
+    .wrap-filter-category {
+        font-size: .8rem;
+    }
+}
+
+
+/* 필터 - RADIO BUTTON */
+.radio-btn{
+    display:none;
+}
+input[type=radio]:checked + label{
+    background:cyan;
+}
