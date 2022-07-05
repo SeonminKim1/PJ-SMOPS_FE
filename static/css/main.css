@@ -102,12 +102,12 @@ body {
 
 .wrap-filter-category.active {
     display: block;
-    padding: 50px;
+    padding: 10px;
     background-color: whitesmoke;
 }
 
 .box-select-area {
-    margin: 30px 0;
+    margin: 30px 170px;
 }
 
 .box-select-area > span {
@@ -121,7 +121,7 @@ body {
 .filter-main {
     display: flex;
     width: 80%;
-    margin: 20px 0;
+    margin: 20px 160px;
 }
 
 .filter-main > span {
@@ -162,6 +162,7 @@ li > button:hover {
     background-color: blueviolet;
     color: white;
 }
+
 
 @media screen and (max-width: 768px) {
     .wrap-main {
