@@ -116,14 +116,14 @@ async function getMyGalleryList() {
             `
 
             // 상품리스트에 출력하기위해 만든 div append
-            list_box.append(item_mygallery)
+            list_box.prepend(item_mygallery)
 
             var updated_date = new Date(mygallery.log[0]['updated_date']);
             var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
             const history = document.getElementById("history_box_" + mygallery.id)
             const history_item = document.createElement('p')
             history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[0].old_owner} 님이 ${mygallery.log[0].old_price.toLocaleString()} 원에 생성`
-            history.append(history_item)
+            history.prepend(history_item)
 
             // 로그 기록들 출력
             for (var i = 1; i < mygallery.log.length; i++) {
@@ -134,7 +134,7 @@ async function getMyGalleryList() {
                 // append를 이용하기 위해서 div 생성
                 const history_item = document.createElement('p')
                 history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[i].old_owner} 님이 ${mygallery.log[i].old_price.toLocaleString()} 원에 구매`
-                history.append(history_item)
+                history.prepend(history_item)
             }
 
 
