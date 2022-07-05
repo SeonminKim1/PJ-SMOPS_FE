@@ -103,8 +103,8 @@ async function getMyGalleryList() {
                                     <option value="0">보유로 전환</option>
                                 </select>
                             </label></div>
-                            <div><label for="price_${mygallery.id}">가격 : <input id="price_${mygallery.id}" type="text" value="${mygallery.price.toLocaleString()}"></label></div>
-                            <div><label for="description_${mygallery.id}">내용 : <input id="description_${mygallery.id}" type="text" value="${mygallery.description}"></label></div>
+                            <div><label for="price_${mygallery.id}">가격 : <input id="price_${mygallery.id}" type="text" placeholder="${mygallery.price.toLocaleString()}" onfocus="this.placeholder=''" onblur="this.placeholder='${mygallery.price.toLocaleString()}'"></label></div>
+                            <div><label for="description_${mygallery.id}">내용 : <input id="description_${mygallery.id}" type="text" placeholder="${mygallery.description}" onfocus="this.placeholder=''" onblur="this.placeholder='${mygallery.description}'"></label></div>
                         </div>
                     </div>
                     <hr>
