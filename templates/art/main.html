@@ -46,7 +46,7 @@
             </div>
             <!-- Filtering -->
             <div class="wrap-filter-category">
-                <div>
+                <div class="box-select-area box-filter-align">
                     <span>정렬</span>
                     <input type='radio' class = 'radio-btn' name='ordering' id='created_date' value="latest_date"/>
                     <label for='created_date'>최신순</label>
@@ -56,7 +56,7 @@
                     <label for='price_down' />높은가격순</label>
                 </div>
 
-                <div>
+                <div class="box-select-area box-filter-price">
                     <span>가격</span>
                     <input type='radio' class = 'radio-btn' name='price' id='from_0_to_50000' value="0~50,000원"/>
                     <label for='from_0_to_50000' />0~50,000원</label>
@@ -67,7 +67,7 @@
                     <input type='radio' class = 'radio-btn' name='price' id='from_500000_to_infinite' value="500,000~infinite원"/>
                     <label for='from_500000_to_infinite' />500,000원 이상</label>
                 </div>
-                <div>
+                <div class="box-select-area box-filter-shape">
                     <span>그림형태</span>
                     <input type='radio' class = 'radio-btn' name='img_shape' id='square_img' value="정방형"/>
                     <label for='square_img' />정방형</label>
@@ -77,8 +77,8 @@
                     <label for='vertical_img' />세로형</label>
                 </div>
                 <div class="filter-box-search filter-main">
-                    <button class="filter-btn-search" onclick="getFilterResult()">적용하기</button>
                     <button class="filter-btn-initialize" onclick="getFilterInitialize()">초기화</button>
+                    <button class="filter-btn-search" onclick="getFilterResult()">적용하기</button>
                 </div>
             </div>
 

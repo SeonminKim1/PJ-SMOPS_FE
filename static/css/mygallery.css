@@ -232,12 +232,47 @@ body {
 .status-modal-btn {
     width: 200px;
     height: 40px;
+    margin-top: 4%;
+    font-size: 1rem;
     background-color: rgb(200, 200, 200, 0.6);
     color: rgb(43, 43, 43);
     border: 0;
-    border-radius: 5px;
 }
 
 .status-modal-btn:hover {
     font-weight: 600;
+    background-color: blueviolet;
+    color: white;
+}
+
+select {
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 3px 5px;
+    margin-left: 20px;
+}
+
+select:focus {
+    outline: none;
+}
+
+.input-price,
+.input-text {
+    border: none;
+    padding: 10px 8px;
+    margin-left: 20px;
+    background-color: whitesmoke;
+}
+
+
+@media screen and (max-width: 768px) {
+    .status-modal-window {
+        width: 80%;
+        height: 90%;
+    }
+
+    .status-modal-btn {
+        margin-top: 2%;
+    }
 }
