@@ -81,9 +81,10 @@ body {
 
 .wrap-input-init > li > button {
     font-weight: 500;
+    cursor: pointer;
 }
 
-.wrap-input-init > li > button:hover {
+.btn-login-init:hover {
     color: whitesmoke;
     background-color: blueviolet;
     font-weight: 600;
@@ -91,6 +92,20 @@ body {
 
 .wrap-input-init > li > input, button {
     height: 3rem;
+}
+
+.btn-join-init {
+    margin-top: 10px;
+}
+
+.btn-join-init:hover {
+    background-color: grey;
+    color: white;
+}
+
+.text-join {
+    display: block;
+    margin-top: 40px;
 }
 
 @media screen and (max-width: 768px) {
