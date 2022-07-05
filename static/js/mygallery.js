@@ -55,6 +55,7 @@ async function getMyGalleryList() {
                 <span>가격 : ${mygallery.price.toLocaleString()}</span>
                 <span class="sell-status_${mygallery.is_selling}" onclick="status_modalOn(${mygallery.id})">${is_selling}</span>
             </div>
+        
             
             <!-- detail_Modal -->
             <div id="detail_modal_${mygallery.id}" class="modal-overlay">

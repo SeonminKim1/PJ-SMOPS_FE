@@ -275,4 +275,17 @@ select:focus {
     .status-modal-btn {
         margin-top: 2%;
     }
+
+    .wrap-mygallery {
+        display: block;
+    }
+
+    .box-text-mygallery {
+        text-align: center;
+    }
+
+    .sell-status_true,
+    .sell-status_false {
+        padding: 10px;
+    }
 }
