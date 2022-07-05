@@ -58,7 +58,7 @@ function MainProductPutData(product_list){
             item_img_list[i].src = 'https:/' + product_list[i]['img_path']
             item_title_list[i].innerText = product_list[i]['title']
             item_created_user_list[i].innerText = product_list[i]['created_user']
-            item_price_list[i].innerText = product_list[i]['price'] +'원'
+            item_price_list[i].innerText = product_list[i]['price'].toLocaleString() +'원'
         }
     }
 }

@@ -57,26 +57,10 @@ function MainProductDetailPutData(product_one) {
     selling_user_detail.innerText = product_one['owner_user']
     img_shape_detail.innerText = product_one['img_shape']
     update_date_detail.innerText = created_dateString
-    price_detail.innerText = product_one['price'] + '원'
+    price_detail.innerText = product_one['price'].toLocaleString() + '원'
     description_detail.text = product_one['description']
 
-    // json log data convert to logline
-    // var product_one['log'] = product_one['log']
-    // var log_text = ''
-
-    // for (var i = 0; i < product_one['log'].length; i++) {
-    //     var update_date = new Date(product_one['log'][i]['updated_date']);
-    //     var update_dateString = update_date.getFullYear() + '-' + (update_date.getMonth() + 1) + '-' + update_date.getDate();
-    //     if (i == 0) {
-    //         log_text = log_text + '아티스트:' + product_one['log'][i]['old_owner'] + '\n생성일자: ' + update_dateString + '\n\n'
-    //     } else {
-    //         log_text = log_text + '구매자:' + product_one['log'][i]['old_owner'] + '\n구매일자: ' + update_dateString + '\n구매금액:' + product_one['log'][i]['old_price'] + '원' + '\n\n'
-    //     }
-    // }
-
-    // log_content_detail.innerText = log_text
-
-
+    // Modal
     const history_btn = document.querySelector("#history_btn")
     console.log(history_btn)
     history_btn.innerHTML = `

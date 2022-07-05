@@ -52,7 +52,7 @@ async function getMyGalleryList() {
             <div class="box-text-mygallery">
                 <span class="title-mygallery">${mygallery.title}</span>
                 <p>아티스트 : ${mygallery.created_user}</p>
-                <span>가격 : ${mygallery.price}</span>
+                <span>가격 : ${mygallery.price.toLocaleString()}</span>
                 <span class="sell-status_${mygallery.is_selling}" onclick="status_modalOn(${mygallery.id})">${is_selling}</span>
             </div>
             
@@ -103,7 +103,7 @@ async function getMyGalleryList() {
                                     <option value="0">보유로 전환</option>
                                 </select>
                             </label></div>
-                            <div><label for="price_${mygallery.id}">가격 : <input id="price_${mygallery.id}" type="text" value="${mygallery.price}"></label></div>
+                            <div><label for="price_${mygallery.id}">가격 : <input id="price_${mygallery.id}" type="text" value="${mygallery.price.toLocaleString()}"></label></div>
                             <div><label for="description_${mygallery.id}">내용 : <input id="description_${mygallery.id}" type="text" value="${mygallery.description}"></label></div>
                         </div>
                     </div>
@@ -117,15 +117,12 @@ async function getMyGalleryList() {
 
             // 상품리스트에 출력하기위해 만든 div append
             list_box.append(item_mygallery)
-            console.log(item_mygallery)
-            console.log('===', mygallery)
 
-            console.log('===', mygallery.log[0])
             var updated_date = new Date(mygallery.log[0]['updated_date']);
             var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
             const history = document.getElementById("history_box_" + mygallery.id)
             const history_item = document.createElement('p')
-            history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[0].old_owner} 님이 ${mygallery.log[0].old_price} 원에 생성`
+            history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[0].old_owner} 님이 ${mygallery.log[0].old_price.toLocaleString()} 원에 생성`
             history.append(history_item)
 
             // 로그 기록들 출력
@@ -136,7 +133,7 @@ async function getMyGalleryList() {
                 const history = document.getElementById("history_box_" + mygallery.id)
                 // append를 이용하기 위해서 div 생성
                 const history_item = document.createElement('p')
-                history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[i].old_owner} 님이 ${mygallery.log[i].old_price} 원에 구매`
+                history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[i].old_owner} 님이 ${mygallery.log[i].old_price.toLocaleString()} 원에 구매`
                 history.append(history_item)
             }
 
