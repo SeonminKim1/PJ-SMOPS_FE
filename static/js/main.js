@@ -155,3 +155,23 @@ async function getSearchResult() {
         alert('ERROR: ', response.status)
     }
 }
+
+// 필터링
+async function getFilterInitialize() {
+    console.log("main.js - getFilterInitialize")
+    const ordering_radio = document.getElementsByName('ordering')
+    const price_radio = document.getElementsByName('price')
+    const img_shape_radio = document.getElementsByName('img_shape')
+
+    ordering_radio.forEach((node) => { if(node.checked){ 
+        node.checked=false;
+
+    }}) 
+    price_radio.forEach((node) => { if(node.checked){ 
+        node.checked=false 
+    }})
+    img_shape_radio.forEach((node) => { if(node.checked){
+        node.checked=false 
+    }})
+
+}
