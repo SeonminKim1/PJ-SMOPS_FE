@@ -118,6 +118,7 @@ async function product_upload(){
     response_json = await response.json()
     console.log(response_json)
     
+    alert('유화 제작 완료~!')
     window.location.replace(`${frontend_base_url}/templates/art/mygallery.html`);
-
+    
 }
