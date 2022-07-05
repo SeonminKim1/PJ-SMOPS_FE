@@ -28,58 +28,61 @@
 
 </head>
 <body onLoad="loadMainProductDetailPage()">
-    <nav id="bar-nav">
-        <script>$("#bar-nav").load( "/templates/nav.html" );</script>
-    </nav>
-    <section>
-        <div class="container-main-detail">
-            <div class="wrap-main-detail">
-                <div class="item-main-detail"> 
-                    <img class="item-img-main-detail" src="/static/img/item.png">
-                    <div class="box-text-main-detail">
-                        <div class="line-text-main-detail-center">
-                            <span class="title-detail">my panting title</span>
-                        </div>
-                        <div class="line-text-main-detail">
-                            <label class="label-detail category">카테고리</label><span class="main-detail category-detail"></span>
-                        </div>
-                        <div class="line-text-main-detail">
-                            <label class="label-detail img-shape">형태</label><span class="main-detail img-shape-detail"></span>
-                        </div>
-                        <div class="line-text-main-detail">
-                            <label class="label-detail create-user">원작자</label><span class="main-detail create-user-detail"></span>
-                        </div>
-                        <div class="line-text-main-detail">
-                            <label class="label-detail selling-user">판매자</label><span class="main-detail selling-user-detail"></span>
-                        </div>
-                        <div class="line-text-main-detail">
-                            <label class="label-detail update-date">등록일</label><span class="main-detail update-date-detail"></span>
-                        </div>
-                        <div class="line-text-main-detail">
-                            <label class="label-detail price">가격</label><span class="main-detail price-detail"></span>
-                        </div>
-                        <div class="line-text-main-detail">
-                            <p class="description-detail">my panting description</p>
-                        </div>
-                        <div class="line-text-main-detail-center">
-                            <span class="log-detail">로그 보기</span>
-                        </div>
-                        <div class="line-text-main-detail-center">
-                            <span class="log-content-detail">로그 내용</span>
-                        </div>
-                        <div class="line-text-main-detail-center">
-                           <button class="buy-button" onclick="buy_product()">구매하기</button>
-                        </div>
+<nav id="bar-nav">
+    <script>$("#bar-nav").load("/templates/nav.html");</script>
+</nav>
+<section>
+    <div class="container-main-detail">
+        <div class="wrap-main-detail">
+            <div class="box-img-main-detail">
+                <img class="img-main-detail" src="/static/img/item.png">
+            </div>
+            <div class="wrap-text-main-detail">
+                <div class="box-text-main-detail">
+                    <div class="box-title-main-detail">
+                        <span class="title-detail">my panting title</span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail category">카테고리  </label><span
+                            class="main-detail category-detail"></span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail img-shape">형태  </label><span
+                            class="main-detail img-shape-detail"></span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail create-user">원작자  </label><span
+                            class="main-detail create-user-detail"></span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail selling-user">판매자  </label><span
+                            class="main-detail selling-user-detail"></span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail update-date">등록일  </label><span
+                            class="main-detail update-date-detail"></span>
+                    </div>
+                    <div class="line-text-main-detail">
+                        <label class="label-detail price">가격  </label><span class="main-detail price-detail"></span>
+                    </div>
+                </div>
+                <div class="box-btn">
+                    <div class="line-text-main-detail-center" id="history_btn">
+                        <p class="description-detail"></p>
+                    </div>
+                    <div class="line-text-main-detail-center">
+                        <button class="btn-buy" onclick="buy_product()">구매하기</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 </body>
 
 <!-- Javascript Import -->
 <script src="/static/js/nav.js"></script>
-<script src="/static/js/main.js"></script>
+<!--<script src="/static/js/main.js"></script>-->
 <script src="/static/js/main_detail.js"></script>
 </html>

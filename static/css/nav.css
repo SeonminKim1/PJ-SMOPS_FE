@@ -37,6 +37,12 @@ a {
     font-weight: 600;
 }
 
+.selected-box-ai-nav {
+    padding: 8px 12px;
+    background-color: blueviolet;
+    font-weight: 700;
+}
+
 .box-logo-nav {
     font-size: 24px;
     font-weight: 700;
@@ -53,7 +59,7 @@ a {
     padding-left: 0;
 }
 
-.box-menu-nav > li {
+.box-menu-nav>li {
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -61,9 +67,32 @@ a {
 
 .menu-nav {
     padding: 8px 15px;
+    cursor: pointer;
 }
 
+.my-menu-nav {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.selected-menu-nav {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+}
+
+.menu-nav-user {
+    padding: 8px 15px;
+}
+
+
 .menu-nav:hover {
+    background-color: blue;
+    color: white;
+}
+
+.my-menu-nav:hover {
     background-color: blue;
     color: white;
 }
@@ -87,13 +116,14 @@ a {
 }
 
 
-.box-category-nav > li {
+.box-category-nav>li {
     list-style: none;
 }
 
 .category-nav {
     margin: 20px;
     padding: 2px 0;
+    cursor: pointer;
 }
 
 .category-nav:hover {
@@ -152,5 +182,3 @@ a {
         display: none;
     }
 }
-
-
