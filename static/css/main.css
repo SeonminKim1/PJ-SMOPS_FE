@@ -102,15 +102,26 @@ body {
 
 .wrap-filter-category.active {
     display: block;
-    padding: 20px;
+    padding: 50px;
     background-color: whitesmoke;
+}
+
+.box-select-area {
+    margin: 30px 0;
+}
+
+.box-select-area > span {
+    font-weight: 600;
+}
+
+.box-select-area > label {
+    margin-left: 20px;
 }
 
 .filter-main {
     display: flex;
-    align-items: center;
     width: 80%;
-    margin: 20px auto;
+    margin: 20px 0;
 }
 
 .filter-main > span {
@@ -122,25 +133,34 @@ body {
     list-style: none;
 }
 
+.filter-btn-initialize,
 .filter-content-btn,
 .filter-btn-search {
     all: unset;
     padding: 8px 10px;
-    margin: 10px;
+    margin: 20px 20px 20px 0;
     cursor: pointer;
 }
 
+
 li > button:hover {
     background-color: lightgray;
+    
 }
 
-.filter-btn-search {
+.filter-btn-search,
+.filter-btn-initialize {
     font-size: 1.2rem;
 }
 
-.filter-btn-search:hover {
+.filter-btn-initialize:hover {
     background-color: slategray;
     color: whitesmoke;
+}
+
+.filter-btn-search:hover {
+    background-color: blueviolet;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {
@@ -171,5 +191,7 @@ li > button:hover {
     display:none;
 }
 input[type=radio]:checked + label{
-    background:cyan;
+    padding: 8px 10px;
+    background: blueviolet;
+    color: white;
 }
