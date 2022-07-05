@@ -1,11 +1,8 @@
 
 
 async function loadMainProductPage() {
-    console.log('==현재위치==', window.location.href)
-    if (window.location.href != `${frontend_base_url}/templates/art/main.html`){
-        window.location.replace(`${frontend_base_url}/templates/art/main.html`);
-    }
-    // window.location.reload()
+    console.log("main.js - loadMainProductPage")
+
     let category_name;
     if(localStorage.getItem('category_name')){
         category_name = localStorage.getItem('category_name')
@@ -13,7 +10,6 @@ async function loadMainProductPage() {
         category_name = `${DEFAULT_CATEGORY}`
     }
 
-    console.log("main.js - loadMainProductPage", category_name)
     const response = await fetch(`${backend_base_url}/product/${category_name}/`,{
         headers:{
             Accept: "application/json",
@@ -21,23 +17,30 @@ async function loadMainProductPage() {
         },
         method: 'GET',
         // body: JSON.stringify(Data)
-    })
-    console.log('============================================', response)
-    
+    })    
     response_json = await response.json()
     
     if(response.status == 200) {
-        MainProductPutData(response_json)
+        MainProductPutData(response_json, category_name)
     } else {
         alert('ERROR: ', response.status)
     }
 }
 
-function MainProductPutData(product_list){
+function MainProductPutData(product_list, category_name){
     const item_img_list = document.querySelectorAll('.item-img')
     const item_title_list = document.querySelectorAll('.title-main')
     const item_created_user_list = document.querySelectorAll('.created-user-main')
     const item_price_list = document.querySelectorAll('.price-main')
+    const category_list = document.querySelectorAll('.category-nav')
+
+    console.log('===', category_list)
+
+    for( let j=0; j<category_list.length; j++){
+        if(category_list[j].innerText==category_name){
+            category_list[j].style.color = 'blue'
+        }
+    }
 
     product_list_length = product_list.length // 5
     for (let i = 0; i < item_img_list.length; i++) {
