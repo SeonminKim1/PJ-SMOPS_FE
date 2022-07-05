@@ -36,7 +36,7 @@ async function loadMainProductPage() {
 function MainProductPutData(product_list){
     const item_img_list = document.querySelectorAll('.item-img')
     const item_title_list = document.querySelectorAll('.title-main')
-    const item_description_list = document.querySelectorAll('.description-main')
+    const item_created_user_list = document.querySelectorAll('.created-user-main')
     const item_price_list = document.querySelectorAll('.price-main')
 
     product_list_length = product_list.length // 5
@@ -45,19 +45,19 @@ function MainProductPutData(product_list){
         if (product_list_length <= i ){ // 
             item_img_list[i].style.visibility = "hidden"
             item_title_list[i].style.visibility = "hidden"
-            item_description_list[i].style.visibility = "hidden"
+            item_created_user_list[i].style.visibility = "hidden"
             item_price_list[i].style.visibility = "hidden"
         }
         else{ 
             item_img_list[i].style.visibility = "visible"
             item_title_list[i].style.visibility = "visible"
-            item_description_list[i].style.visibility = "visible"
+            item_created_user_list[i].style.visibility = "visible"
             item_price_list[i].style.visibility = "visible"
 
             item_img_list[i].setAttribute("id", MAIN_PROUCT_IMG_ID + product_list[i]['id'])
             item_img_list[i].src = 'https:/' + product_list[i]['img_path']
             item_title_list[i].innerText = product_list[i]['title']
-            item_description_list[i].innerText = product_list[i]['description']
+            item_created_user_list[i].innerText = product_list[i]['created_user']
             item_price_list[i].innerText = product_list[i]['price'] +'원'
         }
     }
@@ -154,4 +154,24 @@ async function getSearchResult() {
     } else {
         alert('ERROR: ', response.status)
     }
+}
+
+// 필터링
+async function getFilterInitialize() {
+    console.log("main.js - getFilterInitialize")
+    const ordering_radio = document.getElementsByName('ordering')
+    const price_radio = document.getElementsByName('price')
+    const img_shape_radio = document.getElementsByName('img_shape')
+
+    ordering_radio.forEach((node) => { if(node.checked){ 
+        node.checked=false;
+
+    }}) 
+    price_radio.forEach((node) => { if(node.checked){ 
+        node.checked=false 
+    }})
+    img_shape_radio.forEach((node) => { if(node.checked){
+        node.checked=false 
+    }})
+
 }

@@ -49,11 +49,11 @@
                 <div>
                     <span>정렬</span>
                     <input type='radio' class = 'radio-btn' name='ordering' id='created_date' value="latest_date"/>
-                    <label for='created_date'>등록일</label>
+                    <label for='created_date'>최신순</label>
                     <input type='radio' class = 'radio-btn' name='ordering' id='price_up' value="ascending_price"/>
-                    <label for='price_up' />낮은가격</label>
+                    <label for='price_up' />낮은가격순</label>
                     <input type='radio' class = 'radio-btn' name='ordering' id='price_down' value="descending_price"/>
-                    <label for='price_down' />높은가격</label>
+                    <label for='price_down' />높은가격순</label>
                 </div>
 
                 <div>
@@ -64,6 +64,8 @@
                     <label for='from_50000_to_100000' />50,000~100,000원</label>
                     <input type='radio' class = 'radio-btn' name='price' id='from_100000_to_500000' value="100,000~500,000원"/>
                     <label for='from_100000_to_500000' />100,000~500,000원</label>
+                    <input type='radio' class = 'radio-btn' name='price' id='from_500000_to_infinite' value="500,000~infinite원"/>
+                    <label for='from_500000_to_infinite' />500,000원 이상</label>
                 </div>
                 <div>
                     <span>그림형태</span>
@@ -76,6 +78,7 @@
                 </div>
                 <div class="filter-box-search filter-main">
                     <button class="filter-btn-search" onclick="getFilterResult()">적용하기</button>
+                    <button class="filter-btn-initialize" onclick="getFilterInitialize()">초기화</button>
                 </div>
             </div>
 
@@ -85,7 +88,7 @@
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
                         <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
                         <span class="price-main">0원</span>
                     </div>
                 </div>
@@ -93,24 +96,7 @@
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
                         <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
-                        <span class="price-main">0원</span>
-
-                    </div>
-                </div>
-                <div class="item-main">
-                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
-                    <div class="box-text-main">
-                        <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
-                        <span class="price-main">0원</span>
-                    </div>
-                </div>
-                <div class="item-main">
-                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
-                    <div class="box-text-main">
-                        <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
                         <span class="price-main">0원</span>
 
                     </div>
@@ -119,7 +105,7 @@
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
                         <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
                         <span class="price-main">0원</span>
                     </div>
                 </div>
@@ -127,7 +113,7 @@
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
                         <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
                         <span class="price-main">0원</span>
 
                     </div>
@@ -136,7 +122,24 @@
                     <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
                         <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
                         <span class="price-main">0원</span>
                     </div>
                 </div>
@@ -144,49 +147,7 @@
                     <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
                         <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
-                        <span class="price-main">0원</span>
-
-                    </div>
-                </div>
-                <div class="item-main">
-                    <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
-                    <div class="box-text-main">
-                        <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
-                        <span class="price-main">0원</span>
-                    </div>
-                </div>
-                <div class="item-main">
-                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
-                    <div class="box-text-main">
-                        <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
-                        <span class="price-main">0원</span>
-                    </div>
-                </div>
-                <div class="item-main">
-                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
-                    <div class="box-text-main">
-                        <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
-                        <span class="price-main">0원</span>
-
-                    </div>
-                </div>
-                <div class="item-main">
-                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
-                    <div class="box-text-main">
-                        <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
-                        <span class="price-main">0원</span>
-                    </div>
-                </div>
-                <div class="item-main">
-                    <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
-                    <div class="box-text-main">
-                        <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
                         <span class="price-main">0원</span>
 
                     </div>
@@ -195,7 +156,32 @@
                     <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
                         <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src="" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
                         <span class="price-main">0원</span>
                     </div>
                 </div>
@@ -203,7 +189,24 @@
                     <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
                     <div class="box-text-main">
                         <span class="title-main">준비 중인 상품입니다.</span>
-                        <p class="description-main">준비 중인 상품입니다.</p>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
+                        <span class="price-main">0원</span>
+                    </div>
+                </div>
+                <div class="item-main">
+                    <img class="item-img" src= "" onclick="goMainProductDetailPage(this.id)">
+                    <div class="box-text-main">
+                        <span class="title-main">준비 중인 상품입니다.</span>
+                        <p class="created-user-main">준비 중인 상품입니다.</p>
                         <span class="price-main">0원</span>
                     </div>
                 </div>

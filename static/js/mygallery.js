@@ -51,7 +51,7 @@ async function getMyGalleryList() {
             <img src="${img_src}" id=product_img_${mygallery.id} onclick="detail_modalOn(${mygallery.id})">
             <div class="box-text-mygallery">
                 <span class="title-mygallery">${mygallery.title}</span>
-                <p>창작자 : ${mygallery.created_user}</p>
+                <p>아티스트 : ${mygallery.created_user}</p>
                 <span>가격 : ${mygallery.price}</span>
                 <span class="sell-status_${mygallery.is_selling}" onclick="status_modalOn(${mygallery.id})">${is_selling}</span>
             </div>
@@ -70,6 +70,8 @@ async function getMyGalleryList() {
                             <h4>기본 정보</h4>
                             <p>아티스트 : ${mygallery.created_user}</p>
                             <p>작품명 : ${mygallery.title}</p>
+                            <p>카테고리 : ${mygallery.category}</p>
+                            <p>형태 : ${mygallery.img_shape}</p>
                             <p>생성일자 : ${created_dateString}</p>
                             <p>작품설명 : <p class="long-desc">${mygallery.description}</p></p>
                             <h4>히스토리</h4>
@@ -116,7 +118,9 @@ async function getMyGalleryList() {
             // 상품리스트에 출력하기위해 만든 div append
             list_box.append(item_mygallery)
             console.log(item_mygallery)
+            console.log('===', mygallery)
 
+            console.log('===', mygallery.log[0])
             var updated_date = new Date(mygallery.log[0]['updated_date']);
             var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
             const history = document.getElementById("history_box_" + mygallery.id)
