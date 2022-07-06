@@ -55,6 +55,7 @@ async function getMyGalleryList() {
                 <span>가격 : ${mygallery.price.toLocaleString()}</span>
                 <span class="sell-status_${mygallery.is_selling}" onclick="status_modalOn(${mygallery.id})">${is_selling}</span>
             </div>
+        
             
             <!-- detail_Modal -->
             <div id="detail_modal_${mygallery.id}" class="modal-overlay">
@@ -182,13 +183,13 @@ async function updateProduct(product_id) {
         }
     } else if (description == "") {
         Data = {
-            price: parseInt(String(price.replace(',', ""))),
+            price: price,
             is_selling: document.getElementById("is_selling_" + product_id).value,
         }
     } else {
         Data = {
             description: description,
-            price: parseInt(String(price.replace(',', ""))),
+            price: price,
             is_selling: document.getElementById("is_selling_" + product_id).value,
         }
     }

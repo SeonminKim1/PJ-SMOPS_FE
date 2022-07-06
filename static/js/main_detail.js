@@ -43,7 +43,6 @@ function MainProductDetailPutData(product_one) {
     const update_date_detail = document.querySelector('.update-date-detail')
     const price_detail = document.querySelector('.price-detail')
     const description_detail = document.querySelector('.description-detail')
-    const log_content_detail = document.querySelector('.log-content-detail')
 
     // json date data convert to 2022-06-29
     var created_date = new Date(product_one['created_date']);
@@ -105,7 +104,7 @@ function MainProductDetailPutData(product_one) {
         // append를 이용하기 위해서 div 생성
         const history_item = document.createElement('p')
         history_item.innerHTML = `${log_updated_dateString} 에 ${product_one['log'][i].old_owner} 님이 ${product_one['log'][i].old_price} 원에 구매`
-        history.append(history_item)
+        history.prepend(history_item)
     }
 
 
@@ -121,7 +120,7 @@ async function buy_product() {
         product_id = product_id.replace(MAIN_PROUCT_IMG_ID, '')
         product_id = parseInt(product_id)
 
-        const price = parseInt((document.querySelector('.price-detail').innerText).replace('원', ''))
+        const price = parseInt((document.querySelector('.price-detail').innerText).replace('원', '').replace(/,/g, ""))
 
         const date = new Date();
         const update_date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
