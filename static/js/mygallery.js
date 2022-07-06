@@ -183,13 +183,13 @@ async function updateProduct(product_id) {
         }
     } else if (description == "") {
         Data = {
-            price: parseInt(String(price.replace(',', ""))),
+            price: price,
             is_selling: document.getElementById("is_selling_" + product_id).value,
         }
     } else {
         Data = {
             description: description,
-            price: parseInt(String(price.replace(',', ""))),
+            price: price,
             is_selling: document.getElementById("is_selling_" + product_id).value,
         }
     }
