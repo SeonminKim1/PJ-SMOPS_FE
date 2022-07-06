@@ -40,6 +40,7 @@ async function style_transfer() {
   document.querySelector('nav').style.display = "block"
   document.querySelector(".container-process").style.display = "none"
   document.querySelector(".container-result").style.display = "block"
+  alert("유화 제작 완료~!")
 
 }
 
@@ -120,7 +121,7 @@ async function product_upload() {
   response_json = await response.json()
   console.log(response_json)
 
-  alert('유화 제작 완료~!')
+  alert('유화 등록 완료~!')
   window.location.replace(`${frontend_base_url}/templates/art/mygallery.html`);
 
 }
