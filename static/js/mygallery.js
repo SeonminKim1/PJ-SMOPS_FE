@@ -119,22 +119,19 @@ async function getMyGalleryList() {
             // 상품리스트에 출력하기위해 만든 div append
             list_box.prepend(item_mygallery)
 
-            var updated_date = new Date(mygallery.log[0]['updated_date']);
-            var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
-            const history = document.getElementById("history_box_" + mygallery.id)
-            const history_item = document.createElement('p')
-            history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[0].old_owner} 님이 ${mygallery.log[0].old_price.toLocaleString()} 원에 생성`
-            history.prepend(history_item)
-
             // 로그 기록들 출력
-            for (var i = 1; i < mygallery.log.length; i++) {
+            for (var i = 0; i < mygallery.log.length; i++) {
                 var updated_date = new Date(mygallery.log[i]['updated_date']);
                 var log_updated_dateString = updated_date.getFullYear() + '-' + (updated_date.getMonth() + 1) + '-' + updated_date.getDate();
 
                 const history = document.getElementById("history_box_" + mygallery.id)
                 // append를 이용하기 위해서 div 생성
                 const history_item = document.createElement('p')
-                history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[i].old_owner} 님이 ${mygallery.log[i].old_price.toLocaleString()} 원에 구매`
+                if(i == 0){
+                    history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[i].old_owner} 님이 ${mygallery.log[i].old_price.toLocaleString()} 원에 생성`
+                } else {
+                    history_item.innerHTML = `${log_updated_dateString} 에 ${mygallery.log[i].old_owner} 님이 ${mygallery.log[i].old_price.toLocaleString()} 원에 구매`
+                }
                 history.prepend(history_item)
             }
 
@@ -170,27 +167,28 @@ async function deleteProduct(product_id) {
 async function updateProduct(product_id) {
     const description = document.getElementById("description_" + product_id).value
     const price = document.getElementById("price_" + product_id).value
-
+    const is_selling = document.getElementById("is_selling_" + product_id).value
+    
     var Data;
     if (description == "" && price == "") {
         Data = {
-            is_selling: document.getElementById("is_selling_" + product_id).value,
+            is_selling: is_selling
         }
     } else if (price == "") {
         Data = {
             description: description,
-            is_selling: document.getElementById("is_selling_" + product_id).value,
+            is_selling: is_selling
         }
     } else if (description == "") {
         Data = {
             price: price,
-            is_selling: document.getElementById("is_selling_" + product_id).value,
+            is_selling: is_selling
         }
     } else {
         Data = {
             description: description,
             price: price,
-            is_selling: document.getElementById("is_selling_" + product_id).value,
+            is_selling: is_selling
         }
     }
 
@@ -209,10 +207,9 @@ async function updateProduct(product_id) {
     window.location.reload()
 }
 
-var detail_modal;
 // detail modal on
 function detail_modalOn(product_id) {
-    detail_modal = document.getElementById("detail_modal_" + product_id)
+    const detail_modal = document.getElementById("detail_modal_" + product_id)
     detail_modal.style.display = "flex"
     detail_modal.style.top = window.pageYOffset + 'px';
     document.querySelector('body').style.overflow = 'hidden'
@@ -220,16 +217,16 @@ function detail_modalOn(product_id) {
 
 // detail modal off
 function detail_modalOff(product_id) {
-    detail_modal = document.getElementById("detail_modal_" + product_id)
+    const detail_modal = document.getElementById("detail_modal_" + product_id)
     detail_modal.style.display = "none"
     detail_modal.style.top = window.pageYOffset + 'px';
     document.querySelector('body').style.overflow = 'scroll'
 }
 
-var status_modal;
+
 // status modal on
 function status_modalOn(product_id) {
-    status_modal = document.getElementById("status_modal_" + product_id)
+    const status_modal = document.getElementById("status_modal_" + product_id)
     status_modal.style.display = "flex"
     status_modal.style.top = window.pageYOffset + 'px';
     document.querySelector('body').style.overflow = 'hidden'
@@ -237,7 +234,7 @@ function status_modalOn(product_id) {
 
 // status modal off
 function status_modalOff(product_id) {
-    status_modal = document.getElementById("status_modal_" + product_id)
+    const status_modal = document.getElementById("status_modal_" + product_id)
     status_modal.style.display = "none"
     status_modal.style.top = window.pageYOffset + 'px';
     document.querySelector('body').style.overflow = 'scroll'

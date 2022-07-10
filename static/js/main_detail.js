@@ -121,7 +121,7 @@ async function buy_product() {
         product_id = parseInt(product_id)
 
         const price = parseInt((document.querySelector('.price-detail').innerText).replace('원', '').replace(/,/g, ""))
-
+        
         const date = new Date();
         const update_date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
